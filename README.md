@@ -1,8 +1,12 @@
 <!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="description" content="Homepage of Jon Atwell"/>
+<meta name="keywords" content="Sociology, complexity, big data, labs"/>
+<meta name="author" content="Jon Atwell"/>
 <title>jon atwell : homepage</title>
-<link type="text/css" rel="stylesheet" href="style.css"/>
+<link href="style.css" type="text/css" rel="stylesheet"/>
 </head>
 
 
