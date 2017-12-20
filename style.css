@@ -1,0 +1,78 @@
+body {
+  overflow: visible;
+  margin: 100;
+}
+
+
+.link {
+  fill: none;
+  stroke: #666;
+  stroke-width: 4.5px;
+}
+
+.link.active {
+  fill: none;
+  stroke: blue;
+  stroke-width: 4.5px;
+}
+  
+circle {
+  fill: #E6E6E6;
+  stroke: #333;
+  stroke-width: 4.25px;
+}
+
+foreignObject {
+  cursor:default;
+}
+
+a{
+  text-decoration: none;
+  color: black;
+}
+#chart, #header, #spec, #spec2 {
+  position: absolute;
+}
+
+#header {
+  z-index: 1;
+  display: block;
+}
+
+#header {
+  top: 70px;
+  left: 70px;
+  font: 300 36px "Helvetica Neue";
+}
+
+#spec {
+  z-index: 1;
+  display: block;
+}
+
+#spec {
+  top: 155px;
+  left: 70px;
+  font: 300 18px "Helvetica Neue";
+  line-height: .5em;
+}
+
+#spec2 {
+  z-index: 1;
+  display: block;
+}
+
+#spec2 {
+  top: 122px;
+  left: 70px;
+  font: 300 14px "Helvetica Neue";
+  line-height: .5em;
+}
+
+
+
+a{
+  text-decoration: none;
+  color:black;
+}
+
