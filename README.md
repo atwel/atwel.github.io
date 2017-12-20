@@ -27,7 +27,7 @@
         <p><a href="about.html">about</a></p>
         <p><a href="links.html">links</a></p></div>
     </div>
-<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="https://d3js.org/d3.v3.min.js"></script>
 
 <script>
     
