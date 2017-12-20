@@ -20,7 +20,7 @@
     <div id="body">
       <div id="chart"></div>
       <div id="header"><a href="index.html">jon atwell</a></div>
-      <div id="spec2">PhD Candidate in Sociology, <a href="http://www.lsa.umich.edu/soc">University of Michigan</a></div>
+      <div id="spec2">PhD Candidate in Sociology, <a href="https://www.lsa.umich.edu/soc">University of Michigan</a></div>
       <div id="spec">
         <p><a href="Atwell_CV_6-2016.pdf">standard cv</a></p>
         <p><a href="teaching.html">teaching</a></p>
@@ -34,10 +34,10 @@
 var nodes=[
 //projects
 {'name_text': 'Market Sites', 'color': 'blue', 'big':45, 'len':150, 'desc':' This project considers the problem of how<br>value is socially constructed in marketplaces <br>using computational models and the empirical<br>case of the American automobile market.'},
-{'name_text': 'Stigmergy Game', 'color': 'blue','big':45, 'len':150,'page':'http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0071828','desc':'First developed by Dr. Savit, the Stigmergy<br>Game is an abstract model of agents co-constructing<br>the relationship between behaviors and rewards<br>indirectly through a shared environment.'},
+{'name_text': 'Stigmergy Game', 'color': 'blue','big':45, 'len':150,'page':'https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0071828','desc':'First developed by Dr. Savit, the Stigmergy<br>Game is an abstract model of agents co-constructing<br>the relationship between behaviors and rewards<br>indirectly through a shared environment.'},
 {'name_text': 'Group Formation', 'color':'blue','big':45, 'len':150,'desc':'Dr. Mizruchi and I have been exploring the<br>endogenous dynamics of group formation in<br>an issue space that a majority can manipulate.'},
 {'name_text': 'Big Data Tools', 'color':'blue','big':45, 'len':150,'page':'lab.html','desc':'Dr. Bruch and I are developing a web-based<br>toolkit to help introduce students to coding<br>and the collection and analysis of big data. It is<br>funded by Michigan\'s <em>Third Century Initiative</em>.'},
-{'name_text': 'Diss.<br>work', 'color':'blue','big':45, 'len':150,'page':'http://www-personal.umich.edu/~atwell/Prospectus.pdf', "desc":
+{'name_text': 'Diss.<br>work', 'color':'blue','big':45, 'len':150,'page':'https://www-personal.umich.edu/~atwell/Prospectus.pdf', "desc":
   "In this series of papers, I consider ways in which indirect information <br>(i.e., not from network alters) helps groups build consensus. In one paper,<br>I use a behavioral experiment to identify the minimal amount necessary  <br>for a consensus to emerge. In the other two papers, I use natural language <br> processing and network analysis to identify this process <em> in situ</em> using data on <br> reviews of literature."},
 {'name_text': 'Emerg. of Language', 'color':'blue', 'big':45, 'len':150,"desc":"Dr. Padgett and I are extending his work that appears in <em> The Emergence <br> of Organizations and Markets</em> to focus on the emergence of <br> language (composable signs and meanings) from exchange relationships."},
 
