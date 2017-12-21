@@ -28,7 +28,7 @@
 
       <div id="overlay" onclick=off()>
            <div id="text1">Hover, drag and click to explore my research map</div>
-            <div id="text2">Hover, drag and click to explore my research map<br>(This site is not optimized for mobile browsers)</div>
+            <div id="text2">Hover, drag and click to explore my research map<br><span style="font-size:20px;">(This site is not optimized for mobile browsers)</span></div>
         
       </div>
       <div id="header"><a href="index.html">jon atwell, phd</a></div>
@@ -50,8 +50,8 @@ function off(){
 }
 
 if (window.mobilecheck()) { 
-   window.document.getElementbyId("text1").style.display="none";
-   window.document.getElementbyId("text2").style.display="block";
+   window.document.getElementById("text1").style.display="none";
+   window.document.getElementById("text2").style.display="block";
  }
 var nodes=[
 //projects
