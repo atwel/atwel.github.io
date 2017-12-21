@@ -26,10 +26,6 @@ foreignObject {
   cursor:default;
 }
 
-a{
-  text-decoration: none;
-  color: black;
-}
 #chart, #header, #spec, #spec2 {
   position: absolute;
 }
@@ -82,8 +78,19 @@ a{
     z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
     cursor: pointer; /* Add a pointer on hover */
 }
-#overlay[target]{
-    display: none;
+
+#overlay2{
+    position: fixed; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.80); /* Black background with opacity */
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
 }
 
 #text1{
@@ -97,8 +104,8 @@ a{
 }
 
 #text2{
-    display: none;
     position: absolute;
+    display: none;
     top: 50%;
     left: 50%;
     font: 300 30px "Helvetica Neue";
@@ -107,7 +114,62 @@ a{
     -ms-transform: translate(-50%,-50%);
 }
 
+#researchtext{
+    position: absolute;
+    display: none;
+    top: 50%;
+    left: 50%;
+    color: white;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    z-index: 5;
+}
+
+#teachingtext{
+    position: absolute;
+    display: none;
+    top: 50%;
+    left: 50%;
+    color: white;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    z-index: 5;
+}
+#abouttext{
+    position: absolute;
+    display: none;
+    top: 50%;
+    left: 50%;
+    color: white;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    z-index: 5;
+}
+
+#linktext{
+    position: absolute;
+    display: none;
+    top: 50%;
+    left: 50%;
+    color: white;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    z-index: 5;
+}
+
+
+#linktext a{
+  text-decoration: none;
+  color: white;
+}
 a{
   text-decoration: none;
-  color:black;
+  color: black;
+}
+
+h3{
+	font: 300 25px "Helvetica Neue";
+}
+h4{
+	font: 300 18px "Helvetica Neue";
 }
