@@ -22,7 +22,19 @@ window.mobilecheck = function() {
     }
     return check;
   };
-
+function menu_overlay(val,count) {
+    if (val){
+    window.document.getElementById("overlay2").style.display = "block";
+    if (count==1){window.document.getElementById("researchtext").style.display = "block";}
+    else if (count==2){window.document.getElementById("teachingtext").style.display = "block";}
+    else if (count==3){window.document.getElementById("abouttext").style.display = "block";}
+    else if (count==4){window.document.getElementById("linktext").style.display = "block";}
+}else{window.document.getElementById("overlay2").style.display = "none";
+    window.document.getElementById("researchtext").style.display = "none";
+    window.document.getElementById("teachingtext").style.display = "none";
+    window.document.getElementById("abouttext").style.display = "none";
+    window.document.getElementById("linktext").style.display = "none";}
+}
 
 </script>
 </head>
@@ -37,12 +49,63 @@ window.mobilecheck = function() {
           <div id="text2">Hover, drag and click to explore my research map<br><span style="font-size:20px;">(This site is not optimized for mobile browsers)</span></div>
 
       </div>
+
+      <div id="overlay2" onclick=menu_overlay(false)></div>
+      <div id="researchtext">
+      <h3> research summary</h3><br>
+      <h4>
+
+      	<p>I have long been interested in how economic and social value is socially constructed. While the embeddedness approach of economic sociology has yielded important insights into how economic action is not narrowly rational, it has yet to address how cognition itself is fundamentally a social process. The introduction of dual processes frameworks to cultural sociology has raised awareness about the social dimensions of cognition, but there is much work to be done.</p>
+
+      	<p>Given my background in dynamical systems research, I've come to focus on the sorts of information groups of actors rely on when they are collectively creating ideas around a new object or concept. The popularity and success of social network analysis has naturally lead others to focus on information from interactions with network alters, but our physical and digital environments are suffused with signals relevant for the cognitive processes that create our ideas about the world. My research explores the perhaps-essential role of signals from the broader social environment.</p>
+
+      	<p>I use a variety of methods to carry out this research agenda. It is very much motivated by insights I've gain through mathematical and agent-based modeling, but the natural limitations of those approaches have lead me to use behavioral experiments, more traditional statistical analyses, and newer data science techniques. I've found that each approach has informed the others and I am now a strong proponent of methodological eclecticism.</p>
+
+      	<p>The research map on my homepage provides an overview of my current projects and I will soon add more details here.</p>
+    </h4></div>
+    <div id="teachingtext">
+    <h3> teaching </h3><br>
+
+    <h4><p>As the older brother to 10 siblings, I've had plenty of opportunities to pass on what I've learned. I've particularly come to enjoy sharing the lessons of craft and that has attracted me to teaching the programming and analytical skills for doing computational social science. All good social science requires craft, but the relative newness of computational approaches means the craft is only just now making its way into curricula. At both the University of Michigan and Northwestern, I've developed teaching materials for instilling craft both inside and outside the classroom.</p>
+
+    <p>In the summer of 2018 I'll be leading an intensive two week course in computational social science at Northwestern University. It is targeted at graduate students in the social sciences and will aim to break down the mental hurdle that is a far bigger impediment to starting computational work than the practical skills of programming. I'll post more information about the course in the spring quarter.</p>
+
+    <p>In fall 2013 I taught my own course at the University of Michigan called Social Dynamics.
+    This small seminar style class used mathematical and computational models to explore the types of feedback that make social dynamics an important area of research. For the course I developed a toolkit to introduce students to big data collection and analysis. This package was turned into a more general toolkit through a generous grant from the University of Michigan's Third Century Initiative. The package can be accessed <a href="lab.html">here.</a></p>
+
+    <p>I also helped teach graduate students and faculty about how to use Python and related packages in their computational research during the University of Michigan's Advanced Research Computing's <a href="http://arc.research.umich.edu/2013/05/20/data-analysis-with-python-workshop-june-10-14/?utm_source=ARC+News+%2B+Events&utm_campaign=f2cd6a9118-RSS_EMAIL_CAMPAIGN&utm_medium=email&utm_term=0_24e6ff2a09-f2cd6a9118-44939565">Data Analysis with Python workshop</a></p>
+
+    <p>I have completed the Center for Research on Learning and Teaching's teaching certificate and have TA'd (GSI'd in Michigan lingo) for Sociology 102 (Children and Childhood) with Karin Martin, Sociology 102 (Sports and Society) with Michael Ybarra, and Sociology 100 (Intro) with Robert Jansen.</p>
+
+
+    </h4>
+
+    </div>
+    <div id="abouttext">
+<h3> jon scherm atwell</h3>
+<a><img src="biopic.png" width="175" halign="right"></a>
+<h4><p> I did my doctorate in sociology at the University of Michigan, where I was an NSF IGERT fellow with the Center for the Study of Complex Systems. I am now a Data Science Scholar at Northwestern University. My interests are ever-evolving, but I generally study the social dimensions of cognition and the dynamic emergence of social order using computational and mathematical techniques. I studied Math, Economics and Philosophy at the University of Wisconsin and worked in the restaurant industry before starting my career.</p>
+
+<p>My dissertation committee was Mark Mizruchi (Sociology, co-chair), Elizabeth Bruch (Sociology, co-chair), John Padgett (Political Science, University of Chicago), Robert Savit (Physics), and Scott E. Page (Complex Systems and Economics).</p>
+<p>My email is atwell at northwestern.edu</h4>
+
+</div>
+<div id="linktext">
+<h3>Some links</h3><br>
+<h4><a href="http://github.com/atwel"> My Github repository</a></h4>
+<h4><a href="lab.html">Learning Programming labs</a></h4>
+<h4><a href="drawnet.html">Javascript network drawing</a></h4>
+<h4><a href="draw.html">Javascript touch-screen draw</a></h4>
+</div>
+
+
+
       <div id="header"><a href="index.html">jon atwell, phd</a></div>
       <div id="spec">
-        <p><a href="research.html">research</a></p>
-        <p><a href="teaching.html">teaching</a></p>
-        <p><a href="about.html">about</a></p>
-        <p><a href="links.html">links</a></p>
+        <p><span onclick=menu_overlay(true,1); style="cursor:pointer;">research</span></p>
+        <p><span onclick=menu_overlay(true,2); style="cursor:pointer;">teaching</span></p>
+        <p><span onclick=menu_overlay(true,3); style="cursor:pointer;">about</span></p>
+        <p><span onclick=menu_overlay(true,4); style="cursor:pointer;">links</span></p>
         <p><a href="Atwell_CV_12_2017.pdf">cv</a></p></div>
     </div>
 
