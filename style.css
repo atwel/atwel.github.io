@@ -125,8 +125,8 @@ foreignObject {
 }
 #teachingtext a{
   text-decoration: none;
-  color: white;
-	z-index: 6;
+  color: lightblue;
+  z-index: 6;
 }
 
 #abouttext{
@@ -155,9 +155,10 @@ foreignObject {
   text-decoration: none;
   color: white;
 }
+
 a{
   text-decoration: none;
-  color: white;
+  color: black;
 }
 
 h3{
