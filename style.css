@@ -135,6 +135,11 @@ foreignObject {
     -ms-transform: translate(-50%,-50%);
     z-index: 5;
 }
+#teachingtext a{
+  text-decoration: none;
+  color: white;
+}
+
 #abouttext{
     position: absolute;
     display: none;
@@ -157,15 +162,6 @@ foreignObject {
     z-index: 5;
 }
 
-#teachingtext a{text-decoration: none;
-  color: blue;
-}
-#researchtext a{text-decoration: none;
-  color: DeepSkyBlue;
-}
-#abouttext a{text-decoration: none;
-  color: LightSkyBlue;
-}
 #linktext a{
   text-decoration: none;
   color: white;
