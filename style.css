@@ -157,7 +157,15 @@ foreignObject {
     z-index: 5;
 }
 
-
+#teachingtext a{text-decoration: none;
+  color: white;
+}
+#researchtext a{text-decoration: none;
+  color: white;
+}
+#abouttext a{text-decoration: none;
+  color: white;
+}
 #linktext a{
   text-decoration: none;
   color: white;
