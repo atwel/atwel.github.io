@@ -18,7 +18,6 @@
     return check;
   };
 
- console.log(window.mobilecheck());
 </script>
 </head>
 
@@ -28,7 +27,9 @@
     <div>
 
       <div id="overlay" onclick=off()>
-           <div id="text">Hover, drag and click to explore my research map</div>
+           <div id="text1">Hover, drag and click to explore my research map</div>
+            <div id="text2">Hover, drag and click to explore my research map<br>(This site is not optimized for mobile browsers)</div>
+        
       </div>
       <div id="header"><a href="index.html">jon atwell, phd</a></div>
       <div id="spec">
@@ -48,7 +49,10 @@ function off(){
     window.document.getElementById("overlay").style.display = "none";
 }
 
-
+if (window.mobilecheck()) { 
+   window.document.getElementbyId("text1").style.display="none";
+   window.document.getElementbyId("text2").style.display="block";
+ }
 var nodes=[
 //projects
 {'name_text': 'Markets as generative sites', 'color': 'blue', 'big':45, 'len':150, 'str_len':18, 'desc':
