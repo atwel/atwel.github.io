@@ -138,6 +138,7 @@ foreignObject {
 #teachingtext a{
   text-decoration: none;
   color: white;
+	z-index: 6;
 }
 
 #abouttext{
