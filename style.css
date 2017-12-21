@@ -158,13 +158,13 @@ foreignObject {
 }
 
 #teachingtext a{text-decoration: none;
-  color: lightblue;
+  color: LightBlue;
 }
 #researchtext a{text-decoration: none;
-  color: lightblue;
+  color: DeepSkyBlue;
 }
 #abouttext a{text-decoration: none;
-  color: lightblue;
+  color: LightSkyBlue;
 }
 #linktext a{
   text-decoration: none;
