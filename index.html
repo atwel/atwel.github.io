@@ -140,7 +140,7 @@ var nodes=[
 //projects
 {'name_text': 'Markets as generative sites', 'color': 'blue', 'big':45, 'len':150, 'str_len':18, 'desc':
 'This project was my 2nd year paper and<br>considers the problem of how value is<br>socially constructed in marketplaces using<br>computational models and the empirical<br>case of the American automobile market.<br>I am currently seeking out the suitable<br>high quality dataset'},
-{'name_text': 'Stigmergy Game', 'color': 'blue','big':45,'str_len':16, 'len':150,'page':'http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0071828','desc':'First developed by Dr. Savit, the Stigmergy<br>Game is an abstract model of agents co-constructing<br>the relationship between behaviors and rewards<br>indirectly through a shared environment.'},
+{'name_text': 'Stigmergy Game', 'color': 'blue','big':45,'str_len':16, 'len':150,'page':'https://deepblue.lib.umich.edu/data/concern/generic_works/5x21tf430','desc':'First developed by Dr. Savit, the Stigmergy<br>Game is an abstract model of agents co-constructing<br>the relationship between behaviors and rewards<br>indirectly through a shared environment.'},
 {'name_text': 'Group Formation', 'color':'blue','big':45, 'len':150, 'str_len':15,'desc':'Dr. Mizruchi and I have been exploring the<br>endogenous dynamics of group formation in<br>an issue space that a majority can manipulate.'},
 {'name_text': 'Programming Tutorials', 'color':'blue','big':45, 'str_len':18, 'len':150,'page':'lab.html','desc':
 'Dr. Bruch and I have developed a series<br>of tutorials to help introduce students to <br>programming, with an eye toward the types<br> of tasks computational social scientists <br>carry out. It was funded by Michigan\'s <br><em>Third Century Initiative</em>.'},
@@ -200,6 +200,7 @@ var links=[
 var tooltip = d3.select("body")
     .append("div")
     .style("position", "absolute")
+    .style("cursor","pointer")
     .style("z-index", "10")
     .style("visibility", "hidden")
     .style("color", "rgba(34, 43, 49, 0.95)")
