@@ -3,6 +3,17 @@ body {
   margin: 100;
 }
 
+.link {
+  fill: none;
+  stroke: #666;
+  stroke-width: 4.5px;
+}
+
+.link.active {
+  fill: none;
+  stroke: blue;
+  stroke-width: 4.5px;
+}
 
 circle {
   fill: #E6E6E6;
