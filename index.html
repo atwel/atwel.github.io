@@ -146,8 +146,8 @@ var nodes=[
 'Dr. Bruch and I have developed a series<br>of tutorials to help introduce students to <br>programming, with an eye toward the types<br> of tasks computational social scientists <br>carry out. It was funded by Michigan\'s <br><em>Third Century Initiative</em>.'},
 {'name_text': 'Dissertation Work', 'color':'blue','big':45, 'str_len':16, 'len':150,'page':'http://www-personal.umich.edu/~atwell/Prospectus.pdf', "desc":
 "<em>The Role of Niche Signals in Self-organization in Society</em>:<br>In these series of papers, I consider ways in which niche signals<br>(i.e. in the social environment, but not from network ties) helps<br>groups coordinate. The first paper uses a system of differential<br>equations to study the effects of this information analytically.<br> The secend uses a behavioral experiment to validate the effects<br>within a large group coordination process. In the last paper, I<br>use natural language processing and network analysis to identify<br>the prerequisites and drivers of the coordination of new social<br>meanings <em> in situ</em> using data on discussions of debut<br> literary fiction."},
-{'name_text': 'Emergence of Language', 'color':'blue', 'big':45, 'len':150, 'str_len':18, "page": "https://github.com/atwel/gui_model", "desc":
-"Dr. Padgett and I are extending his work that<br>appears in <em> The Emergence of Organizations <br>and Markets</em> to focus on the emergence of <br> language (composable signs and meanings)<br> from exchange relationships."},
+{'name_text': 'Emergence of Language', 'color':'blue', 'big':45, 'len':150, 'str_len':18, 'page': 'https://github.com/atwel/gui_model', 'desc':
+'Dr. Padgett and I are extending his work that<br>appears in <em> The Emergence of Organizations <br>and Markets</em> to focus on the emergence of <br> language (composable signs and meanings)<br> from exchange relationships.'},
 
 //papers
 {'name_text': 'paper', 'color':'purple', 'big':25, 'len':100,'str_len':18, 'page':'http://smr.sagepub.com/content/44/2/186', 'desc':'\"Agent-based Models in Empirical Social Research.\"<br> <em> Sociological Methods and Research.</em> 2015.'},
@@ -251,7 +251,7 @@ var gnodes = svg.selectAll('gnode')
      .on("dblclick",function(d) {d.fixed = false;})
      .on("mouseover", function(d) {
               tooltip.html(d.desc);
-              tooltip.style("cursor", "Default");
+              tooltip.style("cursor", "pointer");
               tooltip.style("width", "auto");
               tooltip.style("visibility", "visible");
       })
