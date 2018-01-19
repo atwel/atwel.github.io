@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<title>Slide 10</title>
+<style>
+
+
+#parent {display: table;}
+
+#child {
+    display: table-cell;
+    vertical-align: middle;
+	padding-left:15%;
+	padding-right: 15%;
+}
+
+#title {
+	font: 100 70px "Helvetica Neue";
+    fill: #eee;
+}
+
+.sub {
+	font: 100 40px "Helvetica Neue";
+    fill: #eee;
+}
+
+ul {
+    width:60%;
+}
+#controls {
+    position: absolute;
+    right: 25px;
+}
+
+</style>
+<script>
+    document.onkeydown = function(e) {
+
+        switch (e.keyCode) {
+            case 88:
+                document.getElementById("toc").click()
+                break;
+            case 33:
+                document.getElementById("lastPage").click()
+                break;
+            case 34:
+                document.getElementById("nextPage").click()
+                break;
+            case 37:
+                document.getElementById("lastPage").click()
+                break;
+            case 39:
+                document.getElementById("nextPage").click()
+                break;
+
+        }
+    };
+</script>
+
+<body>
+<div id="parent">
+	<div id="child">
+	<center><div id="title">What next?</div>
+        <br>
+        <br>
+        <div class="sub">Making sense of debut literary fiction novels</div><br><br><br>
+        <div class="sub">Projecting physical space into social space (or vice versa)
+            <ul>
+        <li>statistics of human ecological networks</li>
+        <li>movement across classed space (census/ACS)</li>
+        <li>?</li></ul></div>
+
+</center>
+</div>
+</div>
+
+
+
+
+
+
+
+<div id="controls">
+<a id="lastPage" href="CSS9.html"><img src="left_arrow.png" height="50px" style="padding-right:15px"></a>
+<a id="toc" href="toc.html" ><img src="blockM.png" height="50px" style="padding-right:15px"></a>
+
+</div>
+
+
+
+
+<script>
+document.getElementById("parent").style.height = window.innerHeight*.92+"px";
+document.getElementById("parent").style.width = window.innerWidth*.98+"px";
+</script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<title>Slide 9</title>
+<style>
+
+img {max-width:100%;
+    max-height:95%;}
+
+#parent {display: table;}
+
+#child {
+    display: table-cell;
+    vertical-align: middle;
+	padding-left:15%;
+	padding-right: 15%;
+}
+
+#title {
+	font: 100 70px "Helvetica Neue";
+    fill: #eee;
+}
+
+#sub {
+	font: 100 40px "Helvetica Neue";
+    fill: #eee;
+}
+
+#controls {
+    position: absolute;
+    right: 25px;
+}
+
+</style>
+<script>
+    document.onkeydown = function(e) {
+
+        switch (e.keyCode) {
+            case 88:
+                document.getElementById("toc").click()
+                break;
+            case 33:
+                document.getElementById("lastPage").click()
+                break;
+            case 34:
+                document.getElementById("nextPage").click()
+                break;
+            case 37:
+                document.getElementById("lastPage").click()
+                break;
+            case 39:
+                document.getElementById("nextPage").click()
+                break;
+
+        }
+    };
+</script>
+
+<body>
+<div id="parent">
+	<div id="child">
+	<center><div id="sub"></em></div>
+    <br><br><br><img src="Dynamicsone-two.png">
+</center>
+</div>
+</div>
+
+
+
+
+
+
+
+<div id="controls">
+<a id="lastPage" href="CSS8.html"><img src="left_arrow.png" height="50px" style="padding-right:15px"></a>
+<a id="toc" href="toc.html" ><img src="blockM.png" height="50px" style="padding-right:15px"></a>
+<a id="nextPage" href="CSS10.html"><img src="right_arrow.png" height="50px"></a>
+</div>
+
+
+
+
+<script>
+document.getElementById("parent").style.height = window.innerHeight*.92+"px";
+document.getElementById("parent").style.width = window.innerWidth*.98+"px";
+</script>
+</body>
+</html>

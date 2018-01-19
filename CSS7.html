@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<title>Slide 7</title>
+<style>
+
+
+#parent {display: table;}
+
+#child {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+#title {
+	font: 100 70px "Helvetica Neue";
+    fill: #eee;
+}
+
+#sub {
+	font: 100 40px "Helvetica Neue";
+    fill: #eee;
+}
+
+#controls {
+    position: absolute;
+    right: 25px;
+}
+
+.row {
+	white-space:nowrap;
+	text-align: center;
+	padding:30px;
+
+	font-size: 30px;
+	font-weight: 500;
+}
+
+.column {
+
+	font-size: 30px;
+	font-weight: 500;
+}
+
+td.success {
+	cursor: pointer;
+	width:75px;
+	background-color:springgreen;
+}
+
+td.fail {
+	cursor: pointer;
+	width:75px;
+	background-color:lightgray;
+}
+
+td.empty {
+	width:5px;
+}
+td.spacer {width:20px;}
+
+td a {
+	display:block;
+	width:100%;
+	height:100%;
+}
+
+.center  {
+    width: 75%;
+    padding: 10%;
+	text-align: center;
+
+}
+
+</style>
+<script>
+    document.onkeydown = function(e) {
+
+        switch (e.keyCode) {
+            case 88:
+                document.getElementById("toc").click()
+                break;
+            case 33:
+                document.getElementById("lastPage").click()
+                break;
+            case 34:
+                document.getElementById("nextPage").click()
+                break;
+            case 37:
+                document.getElementById("lastPage").click()
+                break;
+            case 39:
+                document.getElementById("nextPage").click()
+                break;
+
+        }
+    };
+</script>
+<script>
+function sendParameters(val){
+
+    localStorage.setItem('selected', val);
+	window.location.assign("experiment_graphics.html");
+}
+
+</script>
+
+<body>
+<div id="parent">
+	<div id="child">
+<div class="center">
+<table>
+	<tr><th class="row"></th><th class="column" colspan="2">Fully Connected</th><th class="column" colspan="5">Random Network</th><th class="column" colspan="5">Small World</th><th colspan="5" class="column">Lattice Network</th></tr>
+	<tr>
+		<th class="row" scope="row">0 medial names</th>
+		<!-- <td class="styled-select blue semi-square"><select onchange="sendParameters(this.value);">
+				<option disabled selected value> Select a Trial </option>
+  				<option value="0-stig-FULL-B.json">Fully Connected #1</option>
+  				<option value="0-stig-FULL-C.json">Fully Connected #2</option>
+
+
+
+		</select></td>-->
+
+		<td class="success" onclick="sendParameters('0-stig-FULL-B.json');document.location.href='./experiment_graphics.html';" ></td>
+		<td class="success" onclick="sendParameters('0-stig-FULL-C.json');document.location.href='./experiment_graphics.html';" ></td>
+
+
+		<td class="spacer"></td>
+		<td class="empty"></td>
+		<td class="fail" onclick="sendParameters('0-stig-RANDOM-A.json');document.location.href='./experiment_graphics.html';" ></td>
+		<td class="fail" onclick="sendParameters('0-stig-RANDOM-B.json');document.location.href='./experiment_graphics.html';" ></td>
+		<td class="fail" onclick="sendParameters('0-stig-RANDOM-C.json');document.location.href='./experiment_graphics.html';" ></td>
+
+
+		<td class="spacer"></td>
+		<td class="fail" onclick="sendParameters('0-stig-SMALL-A.json');document.location.href='./experiment_graphics.html';" ></td>
+		<td class="fail" onclick="sendParameters('0-stig-SMALL-B.json');document.location.href='./experiment_graphics.html';" ></td>
+		<td class="fail" onclick="sendParameters('0-stig-SMALL-C.json');document.location.href='./experiment_graphics.html';" ></td>
+		<td class="fail" onclick="sendParameters('0-stig-SMALL-D.json');document.location.href='./experiment_graphics.html';" ></td>
+
+
+		<td class="spacer"></td>
+		<td class="empty"></td>
+		<td class="fail" onclick="sendParameters('0-stig-LATTICE-C.json');document.location.href='./experiment_graphics.html';" ></td>
+		<td class="fail" onclick="sendParameters('0-stig-LATTICE-D.json');document.location.href='./experiment_graphics.html';" ></td>
+		<td class="empty"></td>
+
+
+	</tr>
+	<tr>
+
+
+		<th class="row">1 medial name</th>
+		<td class="empty"></td>
+		<td class="empty"></td>
+
+
+		<td class="spacer"></td>
+		<td class="success" onclick="sendParameters('1-stig-RANDOM-B.json');document.location.href='./experiment_graphics.html';" ></td>
+		<td class="success" onclick="sendParameters('1-stig-RANDOM-D.json');document.location.href='./experiment_graphics.html';" ></td>
+		<td class="fail" onclick="sendParameters('1-stig-RANDOM-A.json');document.location.href='./experiment_graphics.html';" ></td>
+		<td class="fail" onclick="sendParameters('1-stig-RANDOM-C.json');document.location.href='./experiment_graphics.html';" ></td>
+
+
+		<td class="spacer"></td>
+		<td class="success" onclick="sendParameters('1-stig-SMALL-C.json');document.location.href='./experiment_graphics.html';" ></td>
+		<td class="fail" onclick="sendParameters('1-stig-SMALL-B.json');document.location.href='./experiment_graphics.html';" ></td>
+		<td class="fail" onclick="sendParameters('1-stig-SMALL-A.json');document.location.href='./experiment_graphics.html';" ></td>
+		<td class="fail" onclick="sendParameters('1-stig-SMALL-D.json');document.location.href='./experiment_graphics.html';" ></td>
+
+
+		<td class="spacer"></td>
+		<td class="empty"></td>
+		<td class="fail" onclick="sendParameters('1-stig-LATTICE-A.json');document.location.href='./experiment_graphics.html';" ></td>
+		<td class="fail" onclick="sendParameters('1-stig-LATTICE-B.json');document.location.href='./experiment_graphics.html';" ></td>
+		<td class="empty"></td>
+
+    </tr>
+	<tr>
+		<th class="row">2 medial names</th>
+		<td class="empty"></td>
+		<td class="empty"></td>
+
+
+		<td class="spacer"></td>
+		<td class="success" onclick="sendParameters('2-stig-RANDOM-A.json');document.location.href='./experiment_graphics.html';" ></td>
+		<td class="success" onclick="sendParameters('2-stig-RANDOM-B.json');document.location.href='./experiment_graphics.html';" ></td>
+		<td class="success" onclick="sendParameters('2-stig-RANDOM-C.json');document.location.href='./experiment_graphics.html';" ></td>
+		<td class="success" onclick="sendParameters('2-stig-RANDOM-D.json');document.location.href='./experiment_graphics.html';" ></td>
+
+
+		<td class="spacer"></td>
+		<td class="success" onclick="sendParameters('2-stig-SMALL-A.json');document.location.href='./experiment_graphics.html';" ></td>
+		<td class="success" onclick="sendParameters('2-stig-SMALL-B.json');document.location.href='./experiment_graphics.html';" ></td>
+		<td class="success" onclick="sendParameters('2-stig-SMALL-C.json');document.location.href='./experiment_graphics.html';" ></td>
+		<td class="success" onclick="sendParameters('2-stig-SMALL-D.json');document.location.href='./experiment_graphics.html';" ></td>
+
+
+		<td class="spacer"></td>
+		<td class="success" onclick="sendParameters('2-stig-LATTICE-D.json');document.location.href='./experiment_graphics.html';" ></td>
+		<td class="fail" onclick="sendParameters('2-stig-LATTICE-B.json');document.location.href='./experiment_graphics.html';" ></td>
+		<td class="fail" onclick="sendParameters('3-stig-LATTICE-C.json');document.location.href='./experiment_graphics.html';" ></td>
+		<td class="fail" onclick="sendParameters('2-stig-LATTICE-A.json');document.location.href='./experiment_graphics.html';" ></td>
+
+	</tr>
+</table>
+</div>
+</center>
+</div>
+</div>
+
+
+
+
+
+
+
+<div id="controls">
+<a id="lastPage" href="CSS6.html"><img src="left_arrow.png" height="50px" style="padding-right:15px"></a>
+<a id="toc" href="toc.html" ><img src="blockM.png" height="50px" style="padding-right:15px"></a>
+<a id="nextPage" href="CSS8.html"><img src="right_arrow.png" height="50px"></a>
+</div>
+
+
+
+
+<script>
+document.getElementById("parent").style.height = window.innerHeight*.92+"px";
+document.getElementById("parent").style.width = window.innerWidth*.98+"px";
+</script>
+</body>
+</html>
