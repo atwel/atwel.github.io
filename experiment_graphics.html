@@ -164,7 +164,7 @@ text {
     </div>
 </div>
 
-<script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 
 <script>
 function off(){
@@ -253,8 +253,9 @@ var bar_label = svg.append("text")
 
 
 if (width*3/4 < height){
-    var net_height = width*2/4;
-    var net_width = width*2/4;
+    var net_height = width/2;
+    var net_width = width/2;
+    alert("Please maximize your browser window for optimum viewing");
 }
 else{
     var net_height = height;
@@ -310,6 +311,9 @@ function pad(str, padLeft) {
 
 
 
+localStorage.setItem('viewed', true);
+
+
 
 function key(d) { return d.name; }
 function x(d) { return d.x; }
@@ -330,14 +334,14 @@ var count = svg.append("text")
     .attr("class", "general")
     .attr("text-anchor", "left")
     .attr("y", height*.04)
-    .attr("x", 20)
+    .attr("x", "1em")
     .text("Count additional names: "+ general[0]);
 
 var topo = svg.append("text")
     .attr("class", "general")
     .attr("text-anchor", "left")
-    .attr("y", 0)
-    .attr("x", 20)
+    .attr("y", "0em")
+    .attr("x", "1em")
     .text("Topology: "+general[2]);
 
 
@@ -345,7 +349,7 @@ var retrn = svg.append("text")
     .attr("class", "general2")
     .attr("text-anchor", "left")
     .attr("y", height*.12)
-    .attr("x", 20)
+    .attr("x", "1em")
     .attr("text-color", "black")
     .text("\u21E6 Return to Table");
 
@@ -368,7 +372,7 @@ var info = svg.append("text")
   .attr("class", "general2")
   .attr("text-anchor", "left")
   .attr("y", height*.08)
-  .attr("x", 20)
+  .attr("x", "1em")
   .attr("text-color", "black")
   .text("Full description");
 
@@ -387,6 +391,35 @@ var infooverlay = svg.append("rect")
         .style("cursor", "pointer")
         .on("click", info_on);
 
+var match = svg.append("line")
+    .attr("x1","1em")
+    .attr("y1",height*.95)
+    .attr("x2","6em")
+    .attr("y2",height*.95)
+    .attr("stroke","#84f45e")
+    .attr("stroke-width",18)
+
+var nomatch = svg.append("line")
+    .attr("x1","1em")
+    .attr("y1",height*.98)
+    .attr("x2","6em")
+    .attr("y2",height*.98)
+    .attr("stroke","#730019")
+    .attr("stroke-width",18)
+
+var matchtext = svg.append("text")
+    .text("Match")
+    .attr("text-anchor","middle")
+    .attr("x","3.5em")
+    .attr("y",height*.955)
+
+var nomatchtext = svg.append("text")
+    .text("No Match")
+    .attr("text-anchor","middle")
+    .attr("x","3.5em")
+    .attr("y",height*.985)
+    .attr("fill","white")
+    .attr("font-size","20px")
 
 
 d3.json(selected_run, function(my_nodes) {
@@ -491,8 +524,8 @@ d3.json(selected_run, function(my_nodes) {
        .attr("classed","nodelabel")
        .attr('x', function(d) {return xScale(x(d))-37+net_width/8;})
        .attr('y',function(d) {return yScale(y(d))-16;})
-       .attr('width', 50)
-       .attr('height', 20)
+       .attr('width', "5em")
+       .attr('height', "4em")
      .append("xhtml:body")
        .attr("style", function (d) {return 'font-size: 14px; font-family: \"Helvetica Neue\"; font-weight:500; color:#ddd;white-space: pre';})
        .html(function (d) { return pad(d.name_played,true); })

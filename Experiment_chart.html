@@ -343,6 +343,11 @@ td a {
     if (window.mobilecheck()) {
          window.document.getElementById("overlay-nomobile").style.display = "block";
        }
+    var selected_run = localStorage.getItem('viewed');
+
+    if (selected_run){
+        info_off();
+    }
 
 </script>
 </html>
