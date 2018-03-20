@@ -151,11 +151,17 @@ td a {
 </style>
 
 <script>
+if (window.innerWidth-100 < 1.7*(window.innerHeight-150)){
+    alert("Please maximize your browser window and then refresh the page for optimal viewing");
+}
+
+
     function sendParameters(val){
 
         localStorage.setItem('selected', val);
     	window.location.assign("experiment_graphics.html");
     }
+
 </script>
 
 

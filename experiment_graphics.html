@@ -251,11 +251,10 @@ var bar_label = svg.append("text")
     .text("Name Counts");
 
 
-
-if (width*3/4 < height){
+if (width < 1.7*height){
     var net_height = width/2;
     var net_width = width/2;
-    alert("Please maximize your browser window and refresh the page for optimal viewing");
+    alert("Please maximize your browser window and then refresh the page for optimal viewing");
 }
 else{
     var net_height = height;
