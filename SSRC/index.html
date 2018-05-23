@@ -48,28 +48,43 @@
 
 				<section>
 					<section>
-						<aside class="notes">It's great to be presenting this work to this group of Autocatalysis enthusiasts who remember all of chapters 3 and 4 in Padgett and Powell! But here is a quick refresher in case you're a little rusty.
+						<aside class="notes">It's great to be presenting this work to this group of Autocatalysis enthusiasts who remember all of chapters 2, 3 and 4 in Padgett and Powell! But here is a quick refresher in case you're a little rusty. The concept of Autocatalysis and the Hypercycle model originated with the information crisis of prebiotic chemistry.
 						</aside>
 
-						<h4>The <em>information crisis</em> of <em>pre-biotic</em> chemistry</h4><br>
-						<p class="fragment fade-in" data-fragment-index=1> Macro-molecules can create macro-molecules (translation)</p>
+						<h4>The <em>information crisis</em> of <em>pre-biotic</em> chemistry </h4><br>
+						<p class="fragment fade-in" data-fragment-index=1> Macro-molecules like DNA can create macro-molecules (via translation)</p>
 						<p class="fragment fade-in" data-fragment-index=2> But where did the first macro-molecules come from?</p>
 
 						<br>
-						<!--<p style="font-size:.5em;position:fixed;display:block;left:20px"> Eigen and Schuster (1977, 1978)-->
+						<p style="font-size:.5em;position:fixed;display:block;left:20px"> Eigen and Schuster (1977, 1978)
 						</p>
 					</section>
 
 					<section>
 						<aside class="notes">
-							Eigen and Schuster's answer is to think about species of macro-molecules as being comprised of quasi-species and ask what relationships among the quasi-species can limit errors
+							Eigen and Schuster's answer is to think about species of macro-molecules as being comprised of quasi-species. Here is a sentence they work with, a species if you will. If the reproductive unit is the sentence and reproduction is error prone (all chemical reproduction is) with an equal probability at each letter, the information contained in the sentence would quickly be lost, as degenerate sentences would come to dominate.
 						</aside>
-						<img class="plain" src="images/TAKE_NOLINK.png">
+						<svg width="500" height="500">
+							<circle cx="250" cy="250" r="200" stroke="black" stroke-width="3" fill="white"/>
+							<text x="250" y="250" style="font-size:.6em;font-weight:300;text-anchor:middle;dominant-baseline:central;" z-index=100>TAKE ADVANTAGE OF MISTAKE</text>
+							<circle cx="250" cy="50" r="20" stroke="white" fill="white"/>
+							<text x="235" y="48" style="font-weight:300;font-size:1.25em;text-anchor:middle;dominant-baseline:central;" >➔</text>
+						</svg>
+
 					</section>
 
 					<section>
 						<aside class="notes">
-							Reproduction is error prone and proportional to current population size. In generation 2, we see two mistake and they die. Now other types are below their current concentration, will "replace" dead cells. Repeat. Clearly I'm biasing heavily toward "MISTAKE", but over time one will outcompete all others just by chance.
+							But consider treating the words as quasi-species. THe reproducing units are the words and therefore the rates of change (death or growth ) are proportional to current population size. In this schematic, there is no relationship between quasi-species as far as reproduction is concerned.
+						</aside>
+
+						<img class="plain" src="images/TAKE_NOLINK.png">
+					</section>
+
+
+					<section>
+						<aside class="notes">
+							 We can play this out. Here is a column of the original, information rich population. In generation 2, we see two mistakes introduced. Mistakes aren't variable and they die. Now other types are below their current concentration, will "replace" dead cells. Repeat. Clearly I'm biasing heavily toward "MISTAKE", but over time one will outcompete all others just by chance.
 						</aside>
 						<table style="font-size:.5em">
 							<tr><th>T=0</th><th class="fragment" data-fragment-index=1>T=1</th><th class="fragment" data-fragment-index=2>T=2</th><th class="fragment" data-fragment-index=3>T=3</th><th class="fragment" data-fragment-index=4>T=4</th><th></th><th class="fragment" data-fragment-index=6>T=inf.</th></tr>
@@ -103,10 +118,16 @@
 					</section>
 
 					<section>
+						<aside class="notes">
+							Here you can see the dynamics of that system, as reported by Eigen and Schuster in there original work.
+						</aside>
 						<img class="plain" src="images/TAKEADVANTAGE.png">
 					</section>
 
 					<section>
+						<aside class="notes">
+							These dependencies can be written out in the following equations.
+						</aside>
 						<p>$TAKE_{t+1} = \frac{TAKE_t}{ALL} * \frac{ADVANTAGE_t}{ALL} - \frac{TAKE_t}{ALL} * totalgrowth$</p>
 						<p class="fragment" data-fragment-index=1>$ADVANTAGE_{t+1} = \frac{ADVANTAGE_t}{ALL} * \frac{OF_t}{ALL} - \frac{ADVANTAGE_t}{ALL} * totalgrowth$</p>
 						<p class="fragment" data-fragment-index=1>$OF_{t+1} = \frac{OF_t}{ALL} * \frac{MISTAKE_t}{ALL} - \frac{OF_t}{ALL} * totalgrowth$</p>
@@ -115,15 +136,19 @@
 					</section>
 
 					<section>
-						$\dot{r}_i = r_i * r_{i+1} - r_i \sum_{j=1}^N r_j * r_{j+1}$
+						<aside class="notes">
+							Abstracting away from the example and creating a more generic system, we get this differential equation.
+						</aside>
+							$\dot{r}_i = r_i * r_{i+1} - r_i \sum_{j=1}^N r_j * r_{j+1}$
 					</section>
 
 					<section>
+						<aside class="notes">Schematically, we can depict this system like this.</aside>
 						<img class="plain" src="images/Hypercycle.png">
 					</section>
 
 					<section>
-						<aside class="notes">Note that this system has time dynamics and selective pressures, but is not full on evolutionary; there is no competition between species because there is a single species compromise of quasi-species.</aside>
+						<aside class="notes">And here are the dynamics of the system for different values of N. Note that this system has time dynamics and selective pressures, but is not full on evolutionary; there is no competition between species because there is a single species compromise of quasi-species. More importantly, notice that the hypercycle is stable only up to N=4. So an improvement, but still not great.</aside>
 						<img class="plain" src="images/OriginalHypercycle.png">
 					</section>
 				</section>
@@ -131,20 +156,33 @@
 
 				<section>
 					<section>
+						<aside class="notes">
+							Some years later John Padgett realizes the relevance of this autocatalytic framework for understanding social organization.
+						</aside>
+						<img class="plain" src="images/Padgett-ICC.png">
+					</section>
+					<section>
 						<img class="plain" src="images/PadgettPowell.jpg">
 					</section>
 
 					<section>
+						<aside class="notes">
+							To map the insights of the hypercycle model to social production, Padgett and collaborators reframed the system as actors and products in a network like this. The actors are actually skills that can be reproduced by new individuals acquiring them. The skills transform the products along the chain of the network. Importantly, the model is embedded in space, unlike the original hypercycle.
+						</aside>
 						<img class="plain" src="images/NicheHypercycle.png">
 					</section>
 
 					<section>
 
 						<aside class="notes">
+							So how does this model behave?
 							A lot to notice about these results:<br>
 							Replicates complexity barrier<br>
 							Target vs source<br>
 							Stigmergy is symmetrical with target and source<br>
+							Why I don't like target in economic contexts: payments go backward.
+							Why I still don't like target in social context: I could see both, but it is crazy that the initiator wouldn't be rewarded in some way.
+							As it happens, because the flow only brings in new instances of the first species, target is a terrible system.
 						</aside>
 						<img class="plain" src="images/PP_soloH.png">
 
@@ -158,6 +196,9 @@
 
 				<section>
 					<section>
+						<aside class="notes">
+							This system is driving by a reaction that looks like this. It has 3 steps and to calculate the change in the population of a given species, we want to track the reactions of this type. The target rule is selected first, that rule needs to select the right product type and then the right interaction pattern. The probability of each is simply the concentration of the molecule type in the relevant population.
+						</aside>
 						<table>
 							<tr>
 								<td style="text-align:center">Step #1</td>
@@ -178,6 +219,9 @@
 					</section>
 
 					<section>
+						<aside class="notes">
+							Chemical kinetics says this can be written as a differential or, for our purposes, difference equation.
+						</aside>
 						$Pr(R_{i,t+1} = R_{i,t} + 1) \approx \overbrace{\frac{R_i}{N} * \frac{P_i}{M} * \frac{R_{i+1}}{N}}^\text{growth}$
 					</section>
 
@@ -219,7 +263,7 @@
 				<section>
 
 					<section>
-						<aside class="notes">
+						<aside class="notes"> So what we've been talking about has been a very flat idea of an environment. In chemistry terms, it is in a closer reactor. It's a closed system and would be thermodynamically dead. So let's open it up!
 						</aside>
 						<h4>Closed Reactor</h4>
 						<p> Rule = <svg width=26 height=26><circle cx="14" cy="14" r="10" stroke="black" stroke-width="3" fill="lightgray"/></svg> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Product = <svg width=26 height=26><circle cx="14" cy="14" r="10" stroke="black" stroke-width="3" fill="lightblue"/></svg></p>
@@ -667,6 +711,9 @@
 					</section>
 
 					<section>
+						<aside class="notes">
+							So here is the final difference equation representing a model of a niche constructing hypercycle. <br> As it happens, it contains the same elements as a very influential model of niche consruction from evolutionary biology.
+						</aside>
 						<h4>Final Difference Equations</h4>
 						<p>$ R_{i,t+1} = R_{i,t} + r_{i,t} p_{i,t} r_{i+1,t} - r_{i,t}\sum_{j=1}^N r_{i,t} p_{i,t} r_{i+1,t}$</p>
 						<p>$ P_{i,t+1} = P_{i,t} + (1-F)[r_{i-1,t} p_{i-1,t} - r_{i,t} p_{i,t}] - F[p_{i,t} - p_{i,0}]$
@@ -678,6 +725,9 @@
 					</section>
 
 					<section>
+						<aside class='notes'>
+							What you see here is just the equation that models the dynamics of the endogenously formed environment. Missing is the set of equations and constrains defining the process of gametic recursive, the production of allele. There is just a single product. Lambda 3 is exogenous growth. Lambda two is mathematically equivalent to the ratio between the rule and product population sizes. Gamma is anti-niche constructing (consumption of resource) and 1- lambda 1 is the flow out of the environment. implies lamdba 1 is just what stays.
+						</aside>
 						<h4> The Niche Construction Model</h4>
 						<h6>Laland, Odling-Smee, and Feldman (1999)</h6><br>
 						<p>$R_t = \lambda_1 R_{t-1} (1 - \gamma p) + \lambda_2 p + \lambda_3$</p>
@@ -781,6 +831,7 @@
 
 					<section>
 						<aside class="notes">
+							Here is the big dump of everything.
 						</aside>
 						<img class="plain" src="images/Figure 2.png">
 
@@ -788,6 +839,7 @@
 
 					<section>
 						<aside class="notes">
+							The flow is constant be the activity among the rules and cells is endogenous. Here is the ratio of the flow rate over the death rate. Might be a tad more impressive.
 						</aside>
 						<img class="plain" src="images/Figure_3.png">
 
