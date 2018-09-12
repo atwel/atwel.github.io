@@ -3,6 +3,7 @@ body {
   margin: 100;
 }
 
+
 .link {
   fill: none;
   stroke: #666;
@@ -105,68 +106,62 @@ foreignObject {
 #text2{
     position: absolute;
     display: none;
-    top: 50%;
-    left: 50%;
+    top: 10%;
+    left: 15%;
+    right: 20%;
     font: 300 30px "Helvetica Neue";
     color: white;
-    transform: translate(-50%,-50%);
-    -ms-transform: translate(-50%,-50%);
 }
 
 #researchtext{
     position: absolute;
     display: none;
-    top: 50%;
-    left: 50%;
+    top: 10%;
+    left: 15%;
+    right: 20%;
     color: white;
-    transform: translate(-50%,-50%);
-    -ms-transform: translate(-50%,-50%);
     z-index: 5;
 }
 
 #teachingtext{
     position: absolute;
     display: none;
-    top: 50%;
-    left: 50%;
+    top: 10%;
+    left: 15%;
+    right: 20%;
     color: white;
-    transform: translate(-50%,-50%);
-    -ms-transform: translate(-50%,-50%);
     z-index: 5;
 }
+
 #teachingtext a{
   text-decoration: none;
   color: lightblue;
-  z-index: 6;
 }
 
 #abouttext{
     position: absolute;
     display: none;
-    top: 50%;
-    left: 50%;
+    top: 10%;
+    left: 15%;
+    right: 20%;
     color: white;
-    transform: translate(-50%,-50%);
-    -ms-transform: translate(-50%,-50%);
     z-index: 5;
 }
 
 #linktext{
     position: absolute;
     display: none;
-    top: 50%;
-    left: 50%;
+    top: 30%;
+    left: 30%;
     color: white;
-    transform: translate(-50%,-50%);
-    -ms-transform: translate(-50%,-50%);
     z-index: 5;
 }
+
 
 #linktext a{
   text-decoration: none;
   color: white;
 }
-
 a{
   text-decoration: none;
   color: black;
