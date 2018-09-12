@@ -141,15 +141,15 @@ if (window.mobilecheck()) {
  {'name_text': 'Use of<br>Space', 'color':'purple', 'big':35,'str_len':18,"desc":"theme", 'len':250},
  {'name_text': 'Social<br>Networks', 'color':'purple', 'big':35,'str_len':18, "desc":"theme",'len':250},
 
- {'name_text': 'Elizabeth Bruch', 'color':'green', 'big':28,'str_len':18, 'len':100,'page':'http://www.lsa.umich.edu/soc/people/faculty/ci.bruchelizabethe_ci.detail', 'desc':'Sociology & Complex Systems<br>University of Michigan'},
- {'name_text': 'Mark Mizruchi', 'color':'green', 'big':28,'str_len':18, 'len':100,'page':'http://www-personal.umich.edu/~mizruchi/', 'desc':'Sociology & Organizational Studies<br>University of Michigan'},
- {'name_text': 'John Padgett', 'color':'green', 'big':28,'str_len':18, 'len':100,'page':'http://home.uchicago.edu/jpadgett/', 'desc':'Political Science and Sociology<br> University of Chicago'},
- {'name_text': 'Robert Savit', 'color':'green', 'big':28,'str_len':18, 'len':100,'page':'http://www.lsa.umich.edu/physics/directory/faculty/ci.savitrobert_ci.detail', 'desc':'Physics & Complex Systems<br>University of Michigan'},
- {'name_text': 'Scott Page', 'color':'green', 'big':0,'str_len':18, 'len':100,'page':'http://sites.lsa.umich.edu/scottepage/', 'desc':'Political Science, Economics, and Complex Systems<br>University of Michigan'},
- {'name_text': 'Lynette Shaw', 'color':'green', 'big':28,'str_len':18, 'len':100,'page':'https://lsa.umich.edu/cscs/people/post-docs-lecturers-visiting-scholars/shawla.html', 'desc':'Sociologist & postdoctoral scholar, Michigan Society of Fellows, University of Michigan'},
- {'name_text': 'Beth Redbird', 'color':'green', 'big':28,'str_len':18, 'len':75,'page':'https://www.sociology.northwestern.edu/people/faculty/core/beth-redbird-.html', 'desc':'Sociology, Northwestern University'},
- {'name_text': 'Martin Gerlach', 'color':'green', 'big':28,'str_len':18, 'len':75,'page':'https://martingerlach.github.io/', 'desc':'Mathematician & postdoctoral scholar, Northwestern University'},
- {'name_text': 'Chris Skovron', 'color':'green', 'big':28,'str_len':18, 'len':75,'page':'https://chrisskovron.com/', 'desc':'Political scientist & <em>Data Science Scholar</em>, Northwestern University'},
+ {'name_text': 'Elizabeth Bruch', 'color':'green', 'big':28,'str_len':21, 'len':100,'page':'http://www.lsa.umich.edu/soc/people/faculty/ci.bruchelizabethe_ci.detail', 'desc':'Sociology & Complex Systems<br>University of Michigan'},
+ {'name_text': 'Mark Mizruchi', 'color':'green', 'big':28,'str_len':21, 'len':100,'page':'http://www-personal.umich.edu/~mizruchi/', 'desc':'Sociology & Organizational Studies<br>University of Michigan'},
+ {'name_text': 'John Padgett', 'color':'green', 'big':28,'str_len':21, 'len':100,'page':'http://home.uchicago.edu/jpadgett/', 'desc':'Political Science and Sociology<br> University of Chicago'},
+ {'name_text': 'Robert Savit', 'color':'green', 'big':28,'str_len':21, 'len':100,'page':'http://www.lsa.umich.edu/physics/directory/faculty/ci.savitrobert_ci.detail', 'desc':'Physics & Complex Systems<br>University of Michigan'},
+ {'name_text': 'Scott Page', 'color':'green', 'big':0,'str_len':21, 'len':100,'page':'http://sites.lsa.umich.edu/scottepage/', 'desc':'Political Science, Economics, and Complex Systems<br>University of Michigan'},
+ {'name_text': 'Lynette Shaw', 'color':'green', 'big':28,'str_len':21, 'len':100,'page':'https://lsa.umich.edu/cscs/people/post-docs-lecturers-visiting-scholars/shawla.html', 'desc':'Sociologist & postdoctoral scholar, Michigan Society of Fellows, University of Michigan'},
+ {'name_text': 'Beth Redbird', 'color':'green', 'big':28,'str_len':21, 'len':75,'page':'https://www.sociology.northwestern.edu/people/faculty/core/beth-redbird-.html', 'desc':'Sociology, Northwestern University'},
+ {'name_text': 'Martin Gerlach', 'color':'green', 'big':28,'str_len':21, 'len':75,'page':'https://martingerlach.github.io/', 'desc':'Mathematician & postdoctoral scholar, Northwestern University'},
+ {'name_text': 'Chris Skovron', 'color':'green', 'big':28,'str_len':21, 'len':75,'page':'https://chrisskovron.com/', 'desc':'Political scientist & <em>Data Science Scholar</em>, Northwestern University'},
 
  //papers
  {'name_text': '<div style="height:.5em"></div>Markets as Generative Sites', 'color': 'blue', 'big':45, 'len':250, 'str_len':18, 'desc': 'This project was my 2nd year paper and considers the problem of how value is socially constructed in marketplaces using computational models and the empirical case of the American automobile market. I am currently seeking out a higher quality dataset.'},
@@ -293,7 +293,7 @@ var force = d3.layout.force()
     .links(links)
     .size([width, height])
     .linkDistance(function(d) {return d.target.len*grav_adjust; })
-    .charge(-3000*grav_adjust)
+    .charge(-4500*grav_adjust)
     .gravity(.30)
     .friction(0.75)
     .alpha(.05)
@@ -352,22 +352,21 @@ var labels = gnodes.append("foreignObject")
 
 // Use elliptical arc path segments to doubly-encode directionality.
 function tick() {
-    force.nodes()[0].x = width / 2;
-    force.nodes()[0].y = height * 1/10;
-    force.nodes()[3].x = width / 2;
-    force.nodes()[3].y = height * 5/20;
-    force.nodes()[2].x = width / 2;
-    force.nodes()[2].y = height * 4/10;
-    force.nodes()[1].x = width / 2;
-    force.nodes()[1].y = height * 11/20;
-    force.nodes()[4].x = width / 2;
-    force.nodes()[4].y = height * 7/10;
-    force.nodes()[5].x = width / 2;
-    force.nodes()[5].y = height * 17/20;
-    force.nodes()[5].x = width / 2;
-    force.nodes()[5].y = height * 17/20;
-    force.nodes()[25].x = width * 7/8;
-    force.nodes()[25].y = height * 16/20;
+    force.nodes()[0].x = width * 5/20;
+    force.nodes()[0].y = height * 1/2;
+    force.nodes()[3].x = width * 7/20;
+    force.nodes()[3].y = height * 1/2;
+    force.nodes()[2].x = width * 9/20;
+    force.nodes()[2].y = height * 1/2;
+    force.nodes()[1].x = width *  11/20;
+    force.nodes()[1].y = height * 1/2;
+    force.nodes()[4].x = width * 13/20;
+    force.nodes()[4].y = height * 1/2;
+    force.nodes()[5].x = width * 15/20;
+    force.nodes()[5].y = height * 1/2;
+
+    force.nodes()[25].x = width * 8/10;
+    force.nodes()[25].y = height * 1/6;
 
   path.attr("d", linkArc);
   gnodes.attr("transform", transform);

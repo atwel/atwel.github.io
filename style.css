@@ -99,8 +99,8 @@ foreignObject {
     left: 50%;
     font: 300 30px "Helvetica Neue";
     color: white;
-    transform: translate(-50%,-50%);
-    -ms-transform: translate(-50%,-50%);
+    transform: translate(-55%,-80%);
+    -ms-transform: translate(-55%,-80%);
 }
 
 #text2{
