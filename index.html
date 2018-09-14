@@ -45,8 +45,8 @@ function menu_overlay(val,count) {
     <div>
 
       <div id="overlay" onclick=off()>
-          <div id="text1">Hover, drag and click to explore my research map</div>
-          <div id="text2">Hover, drag and click to explore my research map<br><span style="font-size:20px;">(This site is not optimized for mobile browsers)</span></div>
+          <div id="text1">Hover, drag, and click to explore my research map</div>
+          <div id="text2"><span style="font-size:40px;">(This site is not optimized for mobile browsers)</span><br>Hover, drag, and click to explore my research map</div>
 
       </div>
 
@@ -185,7 +185,7 @@ var links=[
       //with EB
 //{'target': 6,   'source': 15},
 {'target': 6,   'source': 17},
-//{'target': 6,   'source': 20},
+{'target': 6,   'source': 5},
 //{'target': 6,   'source': 21},
 //{'target': 6,   'source': 23},
 {'target': 6,   'source': 26},
@@ -367,6 +367,8 @@ function tick() {
 
     force.nodes()[25].x = width * 8/10;
     force.nodes()[25].y = height * 1/6;
+    force.nodes()[14].x = width * 17/20;
+    force.nodes()[14].y = height * 3/12;
 
   path.attr("d", linkArc);
   gnodes.attr("transform", transform);
