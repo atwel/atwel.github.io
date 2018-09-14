@@ -116,7 +116,7 @@ function off(){
 }
 
 var width = window.innerWidth*.95;
-    height = window.innerHeight*.95;
+    height = window.innerHeight;
     height_adjust = 0;
     size_adjust = 1;
     grav_adjust = 1;
@@ -294,9 +294,9 @@ var force = d3.layout.force()
     .size([width, height])
     .linkDistance(function(d) {return d.target.len*grav_adjust; })
     .charge(-4500*grav_adjust)
-    .gravity(.30)
+    .gravity(.45)
     .friction(0.75)
-    .alpha(.05)
+    .alpha(.9)
     .on("tick", tick)
     .start();
 
