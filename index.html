@@ -46,7 +46,7 @@ function menu_overlay(val,count) {
 
       <div id="overlay" onclick=off()>
           <div id="text1">Hover, drag, and click to explore my research map</div>
-          <div id="text2"><span style="font-size:40px;">(This site is not optimized for mobile browsers)</span><br>Hover, drag, and click to explore my research map</div>
+          <div id="text2">jon atwell, phd<br><br><span style="font-size:25px;">The desktop version of this site has an  interactive research map.<br><br>Please tap anywhere to view the mobile version.</span></div>
 
       </div>
 
@@ -116,7 +116,7 @@ function off(){
 }
 
 var width = window.innerWidth*.95;
-    height = window.innerHeight;
+    height = window.innerHeight*.98;
     height_adjust = 0;
     size_adjust = 1;
     grav_adjust = 1;
@@ -124,7 +124,8 @@ var width = window.innerWidth*.95;
 if (window.mobilecheck()) {
    window.document.getElementById("text1").style.display = "none";
    window.document.getElementById("text2").style.display = "block";
-   height = window.innerHeight*.55;
+   window.document.getElementById("svg").style.display = "none";
+   height = window.innerHeight*.5;
    height_adjust = window.innerHeight*.45;
    size_adjust = .5;
    grav_adjust = .5;
@@ -162,7 +163,7 @@ if (window.mobilecheck()) {
 
  {'name_text': '<div style="height:.5em"></div>Emergence of Language', 'color':'blue', 'big':45, 'len':250, 'str_len':18,"desc":"In this book, John Padgett and I are extending his work that appears in <em>The Emergence of Organizations and Markets</em> to focus on the emergence of language (composable signs and meanings) from exchange relationships."},
 
- {'name_text': 'Extra-network<br>signals', 'color':'blue', 'big':45, 'len':250, 'str_len':16,'page':"https://osf.io/preprints/socarxiv/zka28/", "desc": "Humans process a lot of stimuli. Which are important for social cognition? In this large-group experiment, I show <em>extra</em>-network signals could be very important, carrying more information than other sources, including <em>weak ties</em>.<br><br>Paper: \"The Value of Unstructured Signals for Social Cognition and Coordination: Quantifying Information Gained from Extra-network Sources.\" (under review)<br><br>Pre-print available on SocArxiv (click to view)."},
+ {'name_text': 'Extra-network<br>signals', 'color':'blue', 'big':45, 'len':250, 'str_len':16,'page':"jonatwell.com", "desc": "Humans process a lot of stimuli. Which are important for social cognition? In this large-group experiment, I show <em>extra</em>-network signals could be very important, carrying more information than other sources, including <em>weak ties</em>.<br><br>Paper: \"The Value of Unstructured Signals for Social Cognition and Coordination: Quantifying Information Gained from Extra-network Sources.\" (under review)"},
 
  {'name_text': 'Producing<br>new meanings', 'color':'blue', 'big':45, 'len':250, 'str_len':18,"desc":"Can online communities collectively ascribe shared meanings to a new object? Yes! Using the hierarchical stochastic blockmodeling approach to topic modeling, we explore the conditional nature of groups' production of new meanings around debut works of literary fiction (with Martin Gerlach).<br><br>Paper: \"The Production of Shared Meanings Among Readers of Literary Fiction: De- tecting an Evolution of Topics Using the Hierarchical Stochastic Blockmodeling Approach\" (revising)"},
 
@@ -280,6 +281,7 @@ var tooltip = d3.select("body")
 
 
 var svg = d3.select("body").append("svg")
+    .attr("id","svg")
     .attr("width", width)
     .attr("height", height)
     .attr("transform","translate(0,"+height_adjust+")");
@@ -367,8 +369,6 @@ function tick() {
 
     force.nodes()[25].x = width * 8/10;
     force.nodes()[25].y = height * 1/6;
-    force.nodes()[14].x = width * 17/20;
-    force.nodes()[14].y = height * 3/12;
 
   path.attr("d", linkArc);
   gnodes.attr("transform", transform);
