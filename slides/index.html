@@ -1,0 +1,887 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Atwell - SSRC workshop</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/simple.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+
+			var full_width = window.innerWidth;
+			var full_height = window.innerHeight;
+
+			function title_it(){
+				self.innerHTML = "Atwell and Padgett - The Hypercycle and Niche Construction";
+			}
+
+			function resize(self) {
+				self.style.width = full_width*.95 +"px";
+				self.style.height = full_height*.75+"px";
+
+			}
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+
+				<section data-background-image="images/stromatolite3.jpg">
+					<div style="color:white;font-weight:400;font-size:2em">
+						<p style="font-size:1.1em">The Hypercycle and Niche Construction</p>
+						<p style="font-size:.7em">Jon Atwell and John Padgett</p>
+					</div>
+				</section>
+
+
+				<section>
+					<section>
+						<aside class="notes">It's great to be presenting this work to this group of Autocatalysis enthusiasts who remember all of chapters 2, 3 and 4 in Padgett and Powell! But here is a quick refresher in case you're a little rusty. The concept of Autocatalysis and the Hypercycle model originated with the information crisis of prebiotic chemistry.
+						</aside>
+
+						<h4>The <em>information crisis</em> of <em>pre-biotic</em> chemistry </h4><br>
+						<p class="fragment fade-in" data-fragment-index=1> Macro-molecules like DNA can create macro-molecules (via translation)</p>
+						<p class="fragment fade-in" data-fragment-index=2> But where did the first macro-molecules come from?</p>
+
+
+					</section>
+
+					<section>
+						<aside class="notes">
+							Eigen and Schuster's answer is to think about species of macro-molecules as being comprised of quasi-species. Here is a sentence they work with, a species if you will. If the reproductive unit is the sentence and reproduction is error prone (all chemical reproduction is) with an equal probability at each letter, the information contained in the sentence would quickly be lost, as degenerate sentences would come to dominate.
+						</aside>
+						<svg width="500" height="500">
+							<circle cx="250" cy="250" r="200" stroke="black" stroke-width="3" fill="white"/>
+							<text x="250" y="250" style="font-size:.6em;font-weight:300;text-anchor:middle;dominant-baseline:central;" z-index=100>TAKE ADVANTAGE OF MISTAKE</text>
+							<circle cx="250" cy="50" r="20" stroke="white" fill="white"/>
+							<text x="235" y="48" style="font-weight:300;font-size:1.25em;text-anchor:middle;dominant-baseline:central;" >➔</text>
+						</svg>
+
+						<p style="font-size:.5em;position:fixed;display:block;left:20px" class="fragment fade-in" data-fragment-index=1> Eigen and Schuster (1977, 1978)
+						</p>
+
+					</section>
+
+					<section>
+						<aside class="notes">
+							But consider treating the words as quasi-species. THe reproducing units are the words and therefore the rates of change (death or growth ) are proportional to current population size. In this schematic, there is no relationship between quasi-species as far as reproduction is concerned.
+						</aside>
+
+						<img class="plain" src="images/TAKE_NOLINK.png">
+					</section>
+
+
+					<section>
+						<aside class="notes">
+							 We can play this out. Here is a column of the original, information rich population. In generation 2, we see two mistakes introduced. Mistakes aren't variable and they die. Now other types are below their current concentration, will "replace" dead cells. Repeat. Clearly I'm biasing heavily toward "MISTAKE", but over time one will outcompete all others just by chance.
+						</aside>
+						<table style="font-size:.5em">
+							<tr><th>T=0</th><th class="fragment" data-fragment-index=1>T=1</th><th class="fragment" data-fragment-index=2>T=2</th><th class="fragment" data-fragment-index=3>T=3</th><th class="fragment" data-fragment-index=4>T=4</th><th></th><th class="fragment" data-fragment-index=6>T=inf.</th></tr>
+							<tr><td>TAKE</td><td class="fragment" data-fragment-index=1>TAKE</td><td class="fragment" data-fragment-index=2>TAKE</td><td class="fragment" data-fragment-index=3>T<span style="color:red"><strong>O</strong></span>KE</td><td class="fragment" data-fragment-index=4 style="color:blue">MISTAKE</td><td></td><td class="fragment" data-fragment-index=6 style="color:blue">MISTAKE</td></tr>
+							<tr><td>TAKE</td><td class="fragment" data-fragment-index=1>TAKE</td><td class="fragment" data-fragment-index=2>TAKE</td><td class="fragment" data-fragment-index=3>TAKE</td><td class="fragment" data-fragment-index=4>TAKE</td><td></td><td class="fragment" data-fragment-index=6 style="color:blue">MISTAKE</td></tr>
+							<tr><td>TAKE</td><td class="fragment" data-fragment-index=1>TA<span style="color:red"><strong>X</strong></span>E</td><td class="fragment" data-fragment-index=2 style="color:blue">MISTAKE</td><td class="fragment" data-fragment-index=3 style="color:blue">MISTAKE</td><td class="fragment" data-fragment-index=4 style="color:blue">MISTAKE</td><td></td><td class="fragment" data-fragment-index=6 style="color:blue">MISTAKE</td></tr>
+							<tr><td>TAKE</td><td class="fragment" data-fragment-index=1>TAKE</td><td class="fragment" data-fragment-index=2>TAKE</td><td class="fragment" data-fragment-index=3>TAKE</td><td class="fragment" data-fragment-index=4>TAKE</td><td></td><td class="fragment" data-fragment-index=6 style="color:blue">MISTAKE</td></tr>
+							<tr><td>ADVANTAGE</td><td class="fragment" data-fragment-index=1>ADVANTAGE</td><td class="fragment" data-fragment-index=2>ADVANTAGE</td><td class="fragment" data-fragment-index=3>AD<span style="color:red"><strong>K</strong></span>ANTAGE</td><td class="fragment" data-fragment-index=4 style="color:blue">MISTAKE</td><td></td><td class="fragment" data-fragment-index=6 style="color:blue">MISTAKE</td></tr>
+							<tr><td>ADVANTAGE</td><td class="fragment" data-fragment-index=1>ADVANTAGE</td><td class="fragment" data-fragment-index=2>ADVANTAGE</td><td class="fragment" data-fragment-index=3>ADVANTAGE</td><td class="fragment" data-fragment-index=4>ADVANTAGE</td><td></td><td class="fragment" data-fragment-index=6 style="color:blue">MISTAKE</td></tr>
+							<tr><td>ADVANTAGE</td><td class="fragment" data-fragment-index=1>ADVANTAGE</td><td class="fragment" data-fragment-index=2>ADVANTAGE</td><td class="fragment" data-fragment-index=3>ADVANTAGE</td><td class="fragment" data-fragment-index=4>ADVANTAGE</td><td class="fragment" data-fragment-index=5><strong>...</strong></td><td class="fragment" data-fragment-index=6 style="color:blue">MISTAKE</td></tr>
+							<tr><td>ADVANTAGE</td><td class="fragment" data-fragment-index=1>ADVANTAGE</td><td class="fragment" data-fragment-index=2>ADVANTAGE</td><td class="fragment" data-fragment-index=3>ADVANTAGE</td><td class="fragment" data-fragment-index=4>ADVANTAGE</td><td></td><td class="fragment" data-fragment-index=6 style="color:blue">MISTAKE</td></tr>
+							<tr><td>OF</td><td class="fragment" data-fragment-index=1>O<span style="color:red"><strong>R</strong></span></td><td class="fragment" data-fragment-index=2 style="color:blue">MISTAKE</td><td class="fragment" data-fragment-index=3 style="color:blue"><span style="color:red"><strong>N</strong></span>ISTAKE</td><td class="fragment" data-fragment-index=4 style="color:blue">MISTAKE</td><td></td><td class="fragment" data-fragment-index=6 style="color:blue">MISTAKE</td></tr>
+							<tr><td>OF</td><td class="fragment" data-fragment-index=1>OF</td><td class="fragment" data-fragment-index=2>OF</td><td class="fragment" data-fragment-index=3>OF</td><td class="fragment" data-fragment-index=4>OF</td><td></td><td class="fragment" data-fragment-index=6 style="color:blue">MISTAKE</td></tr>
+							<tr><td>OF</td><td class="fragment" data-fragment-index=1>OF</td><td class="fragment" data-fragment-index=2>OF</td><td class="fragment" data-fragment-index=3>OF</td><td class="fragment" data-fragment-index=4>OF</td><td></td><td class="fragment" data-fragment-index=6 style="color:blue">MISTAKE</td></tr>
+							<tr><td>OF</td><td class="fragment" data-fragment-index=1>OF</td><td class="fragment" data-fragment-index=2>OF</td><td class="fragment" data-fragment-index=3>OF</td><td class="fragment" data-fragment-index=4>OF</td><td></td><td class="fragment" data-fragment-index=6 style="color:blue">MISTAKE</td></tr>
+							<tr><td>MISTAKE</td><td class="fragment" data-fragment-index=1>MISTAKE</td><td class="fragment" data-fragment-index=2>MISTAKE</td><td class="fragment" data-fragment-index=3>MISTAKE</td><td class="fragment" data-fragment-index=4>MISTAKE</td><td></td><td class="fragment" data-fragment-index=6 style="color:blue">MISTAKE</td></tr>
+							<tr><td>MISTAKE</td><td class="fragment" data-fragment-index=1>MISTAKE</td><td class="fragment" data-fragment-index=2>MISTAKE</td><td class="fragment" data-fragment-index=3>MISTAKE</td><td class="fragment" data-fragment-index=4>MISTAKE</td><td></td><td class="fragment" data-fragment-index=6 style="color:blue">MISTAKE</td></tr>
+							<tr><td>MISTAKE</td><td class="fragment" data-fragment-index=1>MISTAKE</td><td class="fragment" data-fragment-index=2>MISTAKE</td><td class="fragment" data-fragment-index=3>MISTAKE</td><td class="fragment" data-fragment-index=4>MISTAKE</td><td></td><td class="fragment" data-fragment-index=6 style="color:blue">MISTAKE</td></tr>
+							<tr><td>MISTAKE</td><td class="fragment" data-fragment-index=1>MISTAKE</td><td class="fragment" data-fragment-index=2>MISTAKE</td><td class="fragment" data-fragment-index=3>MISTAKE</td><td class="fragment" data-fragment-index=4>MISTAKE</td><td></td><td class="fragment" data-fragment-index=6 style="color:blue">MISTAKE</td></tr>
+						</table>
+
+
+
+					</section>
+
+					<section>
+						<aside class="notes">
+							Eigen and Schuster's insight was that some relational topologies among the quasi-species might help balance reproduction to be error correcting. This cyclic topology can do that under the right conditions>
+						</aside>
+						<img class="plain" src="images/TAKE_CYCLE.png">
+					</section>
+
+					<section>
+						<aside class="notes">
+							Here you can see the dynamics of that system, as reported by Eigen and Schuster in there original work.
+						</aside>
+						<img class="plain" src="images/TAKEADVANTAGE.png">
+					</section>
+
+					<section>
+						<aside class="notes">
+							These dependencies can be written out in the following equations.
+						</aside>
+						<p>$TAKE_{t+1} = \frac{TAKE_t}{ALL} * \frac{ADVANTAGE_t}{ALL} - \frac{TAKE_t}{ALL} * totalgrowth$</p>
+						<p class="fragment" data-fragment-index=1>$ADVANTAGE_{t+1} = \frac{ADVANTAGE_t}{ALL} * \frac{OF_t}{ALL} - \frac{ADVANTAGE_t}{ALL} * totalgrowth$</p>
+						<p class="fragment" data-fragment-index=1>$OF_{t+1} = \frac{OF_t}{ALL} * \frac{MISTAKE_t}{ALL} - \frac{OF_t}{ALL} * totalgrowth$</p>
+						<p class="fragment" data-fragment-index=1>$MISTAKE_{t+1} = \frac{MISTAKE_t}{ALL} * \frac{TAKE_t}{ALL} - \frac{MISTAKE_t}{ALL} * totalgrowth$</p>
+
+					</section>
+
+					<section>
+						<aside class="notes">
+							Abstracting away from the example and creating a more generic system, we get this differential equation.
+						</aside>
+							$\dot{r}_i = r_i * r_{i+1} - r_i \sum_{j=1}^N r_j * r_{j+1}$
+					</section>
+
+					<section>
+						<aside class="notes">Schematically, we can depict this system like this.</aside>
+						<img class="plain" src="images/Hypercycle.png">
+					</section>
+
+					<section>
+						<aside class="notes">And here are the dynamics of the system for different values of N. Note that this system has time dynamics and selective pressures, but is not full on evolutionary; there is no competition between species because there is a single species compromise of quasi-species. More importantly, notice that the hypercycle is stable only up to N=4. So an improvement, but still not great.</aside>
+						<img class="plain" src="images/OriginalHypercycle.png">
+					</section>
+				</section>
+
+
+				<section>
+					<section>
+						<aside class="notes">
+							Some years later John Padgett realizes the relevance of this autocatalytic framework for understanding social organization.
+						</aside>
+						<img class="plain" src="images/Padgett-ICC.png">
+					</section>
+					<section>
+						<img class="plain" src="images/PadgettPowell.jpg">
+					</section>
+
+					<section>
+						<aside class="notes">
+							To map the insights of the hypercycle model to social production, Padgett and collaborators reframed the system as actors and products in a network like this. The actors are actually skills that can be reproduced by new individuals acquiring them. The skills transform the products along the chain of the network. Importantly, the model is embedded in space, unlike the original hypercycle.
+						</aside>
+						<img class="plain" src="images/NicheHypercycle.png">
+					</section>
+
+					<section>
+
+						<aside class="notes">
+							So how does this model behave?
+							A lot to notice about these results:<br>
+							Replicates complexity barrier<br>
+							Target vs source<br>
+							Stigmergy is symmetrical with target and source<br>
+							Why I don't like target in economic contexts: payments go backward.
+							Why I still don't like target in social context: I could see both, but it is crazy that the initiator wouldn't be rewarded in some way.
+							As it happens, because the flow only brings in new instances of the first species, target is a terrible system.
+						</aside>
+						<img class="plain" src="images/PP_soloH.png">
+
+					</section>
+
+					<section>
+						<img class="plain" src="images/PP_all3cycle.png">
+					</section>
+				</section>
+
+
+				<section>
+					<section>
+						<aside class="notes">
+							This system is driving by a reaction that looks like this. It has 3 steps and to calculate the change in the population of a given species, we want to track the reactions of this type. The target rule is selected first, that rule needs to select the right product type and then the right interaction pattern. The probability of each is simply the concentration of the molecule type in the relevant population.
+						</aside>
+						<table>
+							<tr>
+								<td style="text-align:center">Step #1</td>
+								<td style="text-align:center">Step #2</td>
+								<td style="text-align:center">Step #3</td>
+							</tr>
+							<tr style="height:2em">
+								<td style="text-align:center;border: 3px solid black"><p class="fragment" data-fragment-index=1>$R_{1,k}$</p></td>
+								<td style="text-align:center;border: 3px solid black"><p class="fragment" data-fragment-index=2>$P_{1,k}$</p></td>
+								<td style="text-align:center;border: 3px solid black"><p class="fragment" data-fragment-index=3>$R_{2,k}$</p></td>
+							</tr>
+							<tr>
+								<td class="fragment" data-fragment-index=4 style="text-align:center;font-size:.6em">$Pr(Type = R_1) = \#R_1 / N$</td>
+								<td class="fragment" data-fragment-index=5 style="text-align:center;font-size:.6em">$Pr(Type = P_1) = \#P_1 / M$</td>
+								<td class="fragment" data-fragment-index=5 style="text-align:center;font-size:.6em">$Pr(Type = R_2) = \#R_2 / N$</td>
+							</tr>
+						</table>
+					</section>
+
+					<section>
+						<aside class="notes">
+							Chemical kinetics says this can be written as a differential or, for our purposes, difference equation.
+						</aside>
+						$Pr(R_{i,t+1} = R_{i,t} + 1) \approx \overbrace{\frac{R_i}{N} * \frac{P_i}{M} * \frac{R_{i+1}}{N}}^\text{growth}$
+					</section>
+
+					<section>
+						$\Delta R_i = \overbrace{\frac{R_i}{N} * \frac{P_i}{M} * \frac{R_{i+1}}{N}}^\text{growth} - \overbrace{\frac{R_i}{N} \sum_{j=1}^N \frac{R_j}{N} * \frac{P_j}{M} * \frac{R_{j+1}}{N}}^\text{death}$
+
+						<p class="fragment" data-fragment-index=1>$R_{i,t+1} = R_{i,t} + \overbrace{\frac{R_{i,t}}{N} * \frac{P_{i,t}}{M} * \frac{R_{i+1,t}} {N}}^\text{growth} - \overbrace{\frac{R_{i,t}}{N} \sum_{j=1}^N \frac{R_{j,t}}{N} * \frac{P_{j,t}}{M} * \frac{R_{j+1,t}}{N}}^\text{death}$</p>
+
+						<p class="fragment" data-fragment-index=2>$R_{i,t+1} = R_{i,t} + \overbrace{r_i p_i r_{i+1}}^\text{growth} - \overbrace{r_i \sum_{j=1}^N r_j p_j r_{j+1}}^\text{death}$</p>
+					</section>
+
+					<section>
+						$P_{i,t+1} = P_{i,t} + \overbrace{r_{i-1} p_{i-1} (1-r_i)}^\text{incoming} + \overbrace{r_i p_i (1-r_{i+1})}^\text{outgoing}$
+					</section>
+
+					<section>
+
+
+						<aside class="notes">
+							We can describe the non-spatial niche constructing system with the following equation. This derivation is a real thing of beauty, but chemical kinetics says the leading terms dominate the dynamics. Our side by side comparisons show this to be true.
+						</aside>
+
+						<h5>Full dynamics (i.e. with chains)</h5><br>
+						<p>$R_{i,t+1} = R_{i,t} + \frac{r_i*r_{i+1}}{1-\prod_{j=1}^{N} r_j} * \bigg(p_i + \displaystyle\sum_{k=1}^{N-1}\bigg[p_{i+k}\prod_{h=i+k}^{N-1+i} r_h\bigg]\bigg) - r_i*\bar{f}$</p>
+						<p class="fragment" data-fragment-index=1>$\bar{f} = \sum r_j$</p>
+
+						<p class="fragment" data-fragment-index=2>$P_{i,t} =  P_{i,t} + \frac{r_{i+1}(1-r_i)}{1-\prod_{j=1}^{N} r_j}\bigg(p_{i+1} + \displaystyle\sum_{k=i}^{N-2+i}\bigg[p_k \prod_{h=k}^{N-2+i} r_h\bigg]\bigg)\\ - \frac{r_i(1-r_{i+1})}{1-\prod_{j=1}^{N}r_j}\bigg(p_i + \displaystyle\sum_{k=i+1}^{N-1+i}\bigg[p_k\prod_{h=k}^{N-1+i}r_h\bigg]\bigg)$</p>
+					</section>
+
+					<section>
+						<h5> Leading term dynamics (i.e. no chains)</h5><br>
+						<p>$R_{i,t+1} = R_{i,t} + r_i p_i r_{i+1} - r_i \sum_{j=1}^N r_j p_j r_{j+1}$</p>
+
+						<p>$P_{i,t+1} = P_{i,t} + r_{i-1} p_{i-1} + r_i p_i$</p>
+					</section>
+				</section>
+
+
+				<section>
+
+					<section>
+						<aside class="notes"> So what we've been talking about has been a very flat idea of an environment. In chemistry terms, it is in a closer reactor. It's a closed system and would be thermodynamically dead. So let's open it up!
+						</aside>
+						<h4>Closed Reactor</h4>
+						<p> Rule = <svg width=26 height=26><circle cx="14" cy="14" r="10" stroke="black" stroke-width="3" fill="lightgray"/></svg> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Product = <svg width=26 height=26><circle cx="14" cy="14" r="10" stroke="black" stroke-width="3" fill="lightblue"/></svg></p>
+						<svg width="400" height="400">
+  							<rect width="400" height="400" style="fill:rgb(255,255,255);stroke-width:10;stroke:rgb(0,0,0)" />
+
+							<circle cx="50" cy="50" r="20" stroke="black" stroke-width="3" fill="lightgray"/>
+							<text x="50" y="50" style="font-size:.45em;text-anchor:middle;dominant-baseline:central" >1➔2</text>
+
+							<circle cx="300" cy="75" r="20" stroke="black" stroke-width="3" fill="lightgray"/>
+							<text x="300" y="75" style="font-size:.45em;text-anchor:middle;dominant-baseline:central" >1➔2</text>
+
+							<circle cx="370" cy="200" r="20" stroke="black" stroke-width="3" fill="lightgray"/>
+							<text x="370" y="200" style="font-size:.45em;text-anchor:middle;dominant-baseline:central" >1➔2</text>
+
+							<circle cx="50" cy="175" r="20" stroke="black" stroke-width="3" fill="lightgray"/>
+							<text x="50" y="175" style="font-size:.45em;text-anchor:middle;dominant-baseline:central;" z-index=100>2➔3</text>
+
+							<circle cx="370" cy="300" r="20" stroke="black" stroke-width="3" fill="lightgray"/>
+							<text x="370" y="300" style="font-size:.45em;text-anchor:middle;dominant-baseline:central;" z-index=100>2➔3</text>
+
+							<circle cx="200" cy="200" r="20" stroke="black" stroke-width="3" fill="lightgray"/>
+							<text x="200" y="200" style="font-size:.45em;text-anchor:middle;dominant-baseline:central;" z-index=100>2➔3</text>
+
+							<circle cx="125" cy="350" r="20" stroke="black" stroke-width="3" fill="lightgray"/>
+							<text x="125" y="350" style="font-size:.45em;text-anchor:middle;dominant-baseline:central;" z-index=100>3➔1</text>
+
+							<circle cx="275" cy="300" r="20" stroke="black" stroke-width="3" fill="lightgray"/>
+							<text x="275" y="300" style="font-size:.45em;text-anchor:middle;dominant-baseline:central;" z-index=100>3➔1</text>
+
+							<circle cx="220" cy="50" r="20" stroke="black" stroke-width="3" fill="lightgray"/>
+							<text x="220" y="50" style="font-size:.45em;text-anchor:middle;dominant-baseline:central;" z-index=100>3➔1</text>
+
+							<circle cx="200" cy="105" r="20" stroke="black" stroke-width="3" fill="lightblue"/>
+							<text x="200" y="105" style="font-size:.45em;text-anchor:middle;dominant-baseline:central;" z-index=100>1</text>
+
+							<circle cx="75" cy="305" r="20" stroke="black" stroke-width="3" fill="lightblue"/>
+							<text x="75" y="305" style="font-size:.45em;text-anchor:middle;dominant-baseline:central;" z-index=100>1</text>
+
+							<circle cx="150" cy="205" r="20" stroke="black" stroke-width="3" fill="lightblue"/>
+							<text x="150" y="205" style="font-size:.45em;text-anchor:middle;dominant-baseline:central;" z-index=100>1</text>
+
+							<circle cx="320" cy="325" r="20" stroke="black" stroke-width="3" fill="lightblue"/>
+							<text x="320" y="325" style="font-size:.45em;text-anchor:middle;dominant-baseline:central;" z-index=100>2</text>
+
+							<circle cx="340" cy="165" r="20" stroke="black" stroke-width="3" fill="lightblue"/>
+							<text x="340" y="165" style="font-size:.45em;text-anchor:middle;dominant-baseline:central;" z-index=100>2</text>
+
+							<circle cx="50" cy="115" r="20" stroke="black" stroke-width="3" fill="lightblue"/>
+							<text x="50" y="115" style="font-size:.45em;text-anchor:middle;dominant-baseline:central;" z-index=100>2</text>
+
+							<circle cx="360" cy="35" r="20" stroke="black" stroke-width="3" fill="lightblue"/>
+							<text x="360" y="35" style="font-size:.45em;text-anchor:middle;dominant-baseline:central;" z-index=100>3</text>
+
+							<circle cx="200" cy="365" r="20" stroke="black" stroke-width="3" fill="lightblue"/>
+							<text x="200" y="365" style="font-size:.45em;text-anchor:middle;dominant-baseline:central;" z-index=100>3</text>
+
+							<circle cx="150" cy="45" r="20" stroke="black" stroke-width="3" fill="lightblue"/>
+							<text x="150" y="45" style="font-size:.45em;text-anchor:middle;dominant-baseline:central;" z-index=100>3</text>
+
+						</svg>
+					</section>
+
+					<section>
+
+
+						<aside class="notes">
+						</aside>
+						<h4>Flow Reactor</h4>
+						<p> Rule = <svg width=26 height=26><circle cx="14" cy="14" r="10" stroke="black" stroke-width="2" fill="lightgray"/></svg> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Product = <svg width=26 height=26><circle cx="14" cy="14" r="10" stroke="black" stroke-width="3" fill="lightblue"/></svg></p>
+						<svg width="700" height="420">
+
+
+  							<rect width="400" height="400" x="150" y="5" style="fill:rgb(255,255,255);stroke-width:10;stroke:rgb(0,0,0)" />
+
+
+							<line style="stroke-width:12;stroke:white;" x1="150" x2="150" y1="175" y2="225"  />
+
+							<line style="stroke-width:12;stroke:white;" x1="550" x2="550" y1="175" y2="225"  />
+
+							<line style="stroke-width:12;stroke:black;" x1="100" x2="155" y1="175" y2="175"  />
+
+							<line style="stroke-width:12;stroke:black;" x1="100" x2="155" y1="225" y2="225"  />
+
+							<text x="125" y="200" style="font-size:1.5em;text-anchor:middle;dominant-baseline:central" >➔</text>
+
+							<text x="95" y="200" style="font-size:1em;text-anchor:middle;dominant-baseline:central;font-weight:400" >f</text>
+
+							<line style="stroke-width:12;stroke:black;" x1="545" x2="600" y1="175" y2="175"  />
+
+							<line style="stroke-width:12;stroke:black;" x1="545" x2="600" y1="225" y2="225"  />
+
+							<text x="575" y="200" style="font-size:1.5em;text-anchor:middle;dominant-baseline:central" >➔ </text>
+
+							<text x="605" y="200" style="font-size:1em;text-anchor:middle;dominant-baseline:central;font-weight:400" >f</text>
+
+
+							<circle cx="50" cy="155" r="20" stroke="black" stroke-width="3" fill="lightblue"/>
+							<text x="50" y="155" style="font-size:.45em;text-anchor:middle;dominant-baseline:central;" z-index=100>1</text>
+
+							<circle cx="65" cy="205" r="20" stroke="black" stroke-width="3" fill="lightblue"/>
+							<text x="65" y="205" style="font-size:.45em;text-anchor:middle;dominant-baseline:central;" z-index=100>2</text>
+
+							<circle cx="635" cy="240" r="20" stroke="black" stroke-width="3" fill="lightblue"/>
+							<text x="635" y="240" style="font-size:.45em;text-anchor:middle;dominant-baseline:central;" z-index=100>3</text>
+
+							<circle cx="650" cy="155" r="20" stroke="black" stroke-width="3" fill="lightblue"/>
+							<text x="650" y="155" style="font-size:.45em;text-anchor:middle;dominant-baseline:central;" z-index=100>1</text>
+
+							<circle cx="665" cy="205" r="20" stroke="black" stroke-width="3" fill="lightblue"/>
+							<text x="665" y="205" style="font-size:.45em;text-anchor:middle;dominant-baseline:central;" z-index=100>2</text>
+
+							<circle cx="35" cy="240" r="20" stroke="black" stroke-width="3" fill="lightblue"/>
+							<text x="35" y="240" style="font-size:.45em;text-anchor:middle;dominant-baseline:central;" z-index=100>3</text>
+
+
+							<circle cx="200" cy="50" r="20" stroke="black" stroke-width="3" fill="lightgray"/>
+							<text x="200" y="50" style="font-size:.45em;text-anchor:middle;dominant-baseline:central" >1➔2</text>
+
+							<circle cx="450" cy="75" r="20" stroke="black" stroke-width="3" fill="lightgray"/>
+							<text x="450" y="75" style="font-size:.45em;text-anchor:middle;dominant-baseline:central" >1➔2</text>
+
+							<circle cx="520" cy="200" r="20" stroke="black" stroke-width="3" fill="lightgray"/>
+							<text x="520" y="200" style="font-size:.45em;text-anchor:middle;dominant-baseline:central" >1➔2</text>
+
+							<circle cx="200" cy="175" r="20" stroke="black" stroke-width="3" fill="lightgray"/>
+							<text x="200" y="175" style="font-size:.45em;text-anchor:middle;dominant-baseline:central;" z-index=100>2➔3</text>
+
+							<circle cx="520" cy="300" r="20" stroke="black" stroke-width="3" fill="lightgray"/>
+							<text x="520" y="300" style="font-size:.45em;text-anchor:middle;dominant-baseline:central;" z-index=100>2➔3</text>
+
+							<circle cx="350" cy="200" r="20" stroke="black" stroke-width="3" fill="lightgray"/>
+							<text x="350" y="200" style="font-size:.45em;text-anchor:middle;dominant-baseline:central;" z-index=100>2➔3</text>
+
+							<circle cx="275" cy="350" r="20" stroke="black" stroke-width="3" fill="lightgray"/>
+							<text x="275" y="350" style="font-size:.45em;text-anchor:middle;dominant-baseline:central;" z-index=100>3➔1</text>
+
+							<circle cx="425" cy="300" r="20" stroke="black" stroke-width="3" fill="lightgray"/>
+							<text x="425" y="300" style="font-size:.45em;text-anchor:middle;dominant-baseline:central;" z-index=100>3➔1</text>
+
+							<circle cx="370" cy="50" r="20" stroke="black" stroke-width="3" fill="lightgray"/>
+							<text x="370" y="50" style="font-size:.45em;text-anchor:middle;dominant-baseline:central;" z-index=100>3➔1</text>
+
+							<circle cx="350" cy="105" r="20" stroke="black" stroke-width="3" fill="lightblue"/>
+							<text x="350" y="105" style="font-size:.45em;text-anchor:middle;dominant-baseline:central;" z-index=100>1</text>
+
+							<circle cx="225" cy="305" r="20" stroke="black" stroke-width="3" fill="lightblue"/>
+							<text x="225" y="305" style="font-size:.45em;text-anchor:middle;dominant-baseline:central;" z-index=100>1</text>
+
+							<circle cx="300" cy="205" r="20" stroke="black" stroke-width="3" fill="lightblue"/>
+							<text x="300" y="205" style="font-size:.45em;text-anchor:middle;dominant-baseline:central;" z-index=100>1</text>
+
+							<circle cx="470" cy="325" r="20" stroke="black" stroke-width="3" fill="lightblue"/>
+							<text x="470" y="325" style="font-size:.45em;text-anchor:middle;dominant-baseline:central;" z-index=100>2</text>
+
+							<circle cx="490" cy="165" r="20" stroke="black" stroke-width="3" fill="lightblue"/>
+							<text x="490" y="165" style="font-size:.45em;text-anchor:middle;dominant-baseline:central;" z-index=100>2</text>
+
+							<circle cx="200" cy="115" r="20" stroke="black" stroke-width="3" fill="lightblue"/>
+							<text x="200" y="115" style="font-size:.45em;text-anchor:middle;dominant-baseline:central;" z-index=100>2</text>
+
+							<circle cx="510" cy="35" r="20" stroke="black" stroke-width="3" fill="lightblue"/>
+							<text x="510" y="35" style="font-size:.45em;text-anchor:middle;dominant-baseline:central;" z-index=100>3</text>
+
+							<circle cx="350" cy="365" r="20" stroke="black" stroke-width="3" fill="lightblue"/>
+							<text x="350" y="365" style="font-size:.45em;text-anchor:middle;dominant-baseline:central;" z-index=100>3</text>
+
+							<circle cx="300" cy="45" r="20" stroke="black" stroke-width="3" fill="lightblue"/>
+							<text x="300" y="45" style="font-size:.45em;text-anchor:middle;dominant-baseline:central;" z-index=100>3</text>
+
+						</svg>
+
+
+					</section>
+
+					<section>
+
+
+						<aside class="notes">
+						</aside>
+						<h4>Flow Reactor</h4>
+						<p> Rule = <svg width=26 height=26><circle cx="14" cy="14" r="10" stroke="black" stroke-width="2" fill="lightgray"/></svg> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Product = <svg width=26 height=26><circle cx="14" cy="14" r="10" stroke="black" stroke-width="3" fill="lightblue"/></svg></p>
+						<svg width="700" height="420">
+
+
+  							<rect width="400" height="400" x="150" y="5" style="fill:rgb(255,255,255);stroke-width:10;stroke:rgb(0,0,0)" />
+
+
+							<line style="stroke-width:12;stroke:white;" x1="150" x2="150" y1="175" y2="225"  />
+
+							<line style="stroke-width:12;stroke:white;" x1="550" x2="550" y1="175" y2="225"  />
+
+
+
+							<line style="stroke-width:12;stroke:black;" x1="100" x2="155" y1="175" y2="175"  />
+
+							<line style="stroke-width:12;stroke:black;" x1="100" x2="155" y1="225" y2="225"  />
+
+							<text x="125" y="200" style="font-size:1.5em;text-anchor:middle;dominant-baseline:central" >➔</text>
+
+							<text x="95" y="200" style="font-size:1em;text-anchor:middle;dominant-baseline:central;font-weight:400" >f</text>
+
+							<line style="stroke-width:12;stroke:black;" x1="545" x2="600" y1="175" y2="175"  />
+
+							<line style="stroke-width:12;stroke:black;" x1="545" x2="600" y1="225" y2="225"  />
+
+							<text x="575" y="200" style="font-size:1.5em;text-anchor:middle;dominant-baseline:central" >➔ </text>
+
+							<text x="605" y="200" style="font-size:1em;text-anchor:middle;dominant-baseline:central;font-weight:400" >f</text>
+
+
+							<circle cx="50" cy="155" r="20" stroke="black" stroke-width="3" fill="lightblue"/>
+							<text x="50" y="155" style="font-size:.45em;text-anchor:middle;dominant-baseline:central;" z-index=100>1</text>
+
+							<circle cx="65" cy="205" r="20" stroke="black" stroke-width="3" fill="lightblue"/>
+							<text x="65" y="205" style="font-size:.45em;text-anchor:middle;dominant-baseline:central;" z-index=100>1</text>
+
+							<circle cx="35" cy="240" r="20" stroke="black" stroke-width="3" fill="lightblue"/>
+							<text x="35" y="240" style="font-size:.45em;text-anchor:middle;dominant-baseline:central;" z-index=100>1</text>
+
+							<circle cx="635" cy="240" r="20" stroke="black" stroke-width="3" fill="lightblue"/>
+							<text x="635" y="240" style="font-size:.45em;text-anchor:middle;dominant-baseline:central;" z-index=100>3</text>
+
+							<circle cx="650" cy="155" r="20" stroke="black" stroke-width="3" fill="lightblue"/>
+							<text x="650" y="155" style="font-size:.45em;text-anchor:middle;dominant-baseline:central;" z-index=100>1</text>
+
+							<circle cx="665" cy="205" r="20" stroke="black" stroke-width="3" fill="lightblue"/>
+							<text x="665" y="205" style="font-size:.45em;text-anchor:middle;dominant-baseline:central;" z-index=100>2</text>
+
+
+
+
+							<circle cx="200" cy="50" r="20" stroke="black" stroke-width="3" fill="lightgray"/>
+							<text x="200" y="50" style="font-size:.45em;text-anchor:middle;dominant-baseline:central" >1➔2</text>
+
+							<circle cx="450" cy="75" r="20" stroke="black" stroke-width="3" fill="lightgray"/>
+							<text x="450" y="75" style="font-size:.45em;text-anchor:middle;dominant-baseline:central" >1➔2</text>
+
+							<circle cx="520" cy="200" r="20" stroke="black" stroke-width="3" fill="lightgray"/>
+							<text x="520" y="200" style="font-size:.45em;text-anchor:middle;dominant-baseline:central" >1➔2</text>
+
+							<circle cx="200" cy="175" r="20" stroke="black" stroke-width="3" fill="lightgray"/>
+							<text x="200" y="175" style="font-size:.45em;text-anchor:middle;dominant-baseline:central;" z-index=100>2➔3</text>
+
+							<circle cx="520" cy="300" r="20" stroke="black" stroke-width="3" fill="lightgray"/>
+							<text x="520" y="300" style="font-size:.45em;text-anchor:middle;dominant-baseline:central;" z-index=100>2➔3</text>
+
+							<circle cx="350" cy="200" r="20" stroke="black" stroke-width="3" fill="lightgray"/>
+							<text x="350" y="200" style="font-size:.45em;text-anchor:middle;dominant-baseline:central;" z-index=100>2➔3</text>
+
+							<circle cx="275" cy="350" r="20" stroke="black" stroke-width="3" fill="lightgray"/>
+							<text x="275" y="350" style="font-size:.45em;text-anchor:middle;dominant-baseline:central;" z-index=100>3➔1</text>
+
+							<circle cx="425" cy="300" r="20" stroke="black" stroke-width="3" fill="lightgray"/>
+							<text x="425" y="300" style="font-size:.45em;text-anchor:middle;dominant-baseline:central;" z-index=100>3➔1</text>
+
+							<circle cx="370" cy="50" r="20" stroke="black" stroke-width="3" fill="lightgray"/>
+							<text x="370" y="50" style="font-size:.45em;text-anchor:middle;dominant-baseline:central;" z-index=100>3➔1</text>
+
+
+
+							<circle cx="350" cy="105" r="20" stroke="black" stroke-width="3" fill="lightblue"/>
+							<text x="350" y="105" style="font-size:.45em;text-anchor:middle;dominant-baseline:central;" z-index=100>1</text>
+
+							<circle cx="225" cy="305" r="20" stroke="black" stroke-width="3" fill="lightblue"/>
+							<text x="225" y="305" style="font-size:.45em;text-anchor:middle;dominant-baseline:central;" z-index=100>1</text>
+
+							<circle cx="300" cy="205" r="20" stroke="black" stroke-width="3" fill="lightblue"/>
+							<text x="300" y="205" style="font-size:.45em;text-anchor:middle;dominant-baseline:central;" z-index=100>1</text>
+
+							<circle cx="470" cy="325" r="20" stroke="black" stroke-width="3" fill="lightblue"/>
+							<text x="470" y="325" style="font-size:.45em;text-anchor:middle;dominant-baseline:central;" z-index=100>2</text>
+
+							<circle cx="490" cy="165" r="20" stroke="black" stroke-width="3" fill="lightblue"/>
+							<text x="490" y="165" style="font-size:.45em;text-anchor:middle;dominant-baseline:central;" z-index=100>2</text>
+
+							<circle cx="200" cy="115" r="20" stroke="black" stroke-width="3" fill="lightblue"/>
+							<text x="200" y="115" style="font-size:.45em;text-anchor:middle;dominant-baseline:central;" z-index=100>2</text>
+
+							<circle cx="510" cy="35" r="20" stroke="black" stroke-width="3" fill="lightblue"/>
+							<text x="510" y="35" style="font-size:.45em;text-anchor:middle;dominant-baseline:central;" z-index=100>3</text>
+
+							<circle cx="350" cy="365" r="20" stroke="black" stroke-width="3" fill="lightblue"/>
+							<text x="350" y="365" style="font-size:.45em;text-anchor:middle;dominant-baseline:central;" z-index=100>3</text>
+
+							<circle cx="300" cy="45" r="20" stroke="black" stroke-width="3" fill="lightblue"/>
+							<text x="300" y="45" style="font-size:.45em;text-anchor:middle;dominant-baseline:central;" z-index=100>3</text>
+
+						</svg>
+
+
+					</section>
+
+					<section>
+
+
+						<aside class="notes">
+						</aside>
+						<h4>Flow Reactor</h4>
+						<p> Rule = <svg width=26 height=26><circle cx="14" cy="14" r="10" stroke="black" stroke-width="2" fill="lightgray"/></svg> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Product = <svg width=26 height=26><circle cx="14" cy="14" r="10" stroke="black" stroke-width="3" fill="lightblue"/></svg></p>
+						<svg width="700" height="420">
+
+
+  							<rect width="400" height="400" x="150" y="5" style="fill:rgb(255,255,255);stroke-width:10;stroke:rgb(0,0,0)" />
+
+
+							<line style="stroke-width:12;stroke:white;" x1="150" x2="150" y1="175" y2="225"  />
+
+							<line style="stroke-width:12;stroke:white;" x1="550" x2="550" y1="175" y2="225"  />
+
+
+
+							<line style="stroke-width:12;stroke:black;" x1="100" x2="155" y1="175" y2="175"  />
+
+							<line style="stroke-width:12;stroke:black;" x1="100" x2="155" y1="225" y2="225"  />
+
+							<text x="125" y="200" style="font-size:1.5em;text-anchor:middle;dominant-baseline:central" >➔</text>
+
+							<text x="95" y="200" style="font-size:1em;text-anchor:middle;dominant-baseline:central;font-weight:400" >f</text>
+
+							<line style="stroke-width:12;stroke:black;" x1="545" x2="600" y1="175" y2="175"  />
+
+							<line style="stroke-width:12;stroke:black;" x1="545" x2="600" y1="225" y2="225"  />
+
+							<text x="575" y="200" style="font-size:1.5em;text-anchor:middle;dominant-baseline:central" >➔ </text>
+
+							<text x="605" y="200" style="font-size:1em;text-anchor:middle;dominant-baseline:central;font-weight:400" >f</text>
+
+
+							<circle cx="50" cy="155" r="20" stroke="black" stroke-width="3" fill="lightblue"/>
+							<text x="50" y="155" style="font-size:.45em;text-anchor:middle;dominant-baseline:central;" z-index=100>1</text>
+
+							<circle cx="65" cy="205" r="20" stroke="black" stroke-width="3" fill="lightblue"/>
+							<text x="65" y="205" style="font-size:.45em;text-anchor:middle;dominant-baseline:central;" z-index=100>1</text>
+
+							<circle cx="35" cy="240" r="20" stroke="black" stroke-width="3" fill="lightblue"/>
+							<text x="35" y="240" style="font-size:.45em;text-anchor:middle;dominant-baseline:central;" z-index=100>1</text>
+
+							<circle cx="635" cy="240" r="20" stroke="black" stroke-width="3" fill="lightblue"/>
+							<text x="635" y="240" style="font-size:.45em;text-anchor:middle;dominant-baseline:central;" z-index=100>3</text>
+
+							<circle cx="650" cy="155" r="20" stroke="black" stroke-width="3" fill="lightblue"/>
+							<text x="650" y="155" style="font-size:.45em;text-anchor:middle;dominant-baseline:central;" z-index=100>1</text>
+
+							<circle cx="665" cy="205" r="20" stroke="black" stroke-width="3" fill="lightblue"/>
+							<text x="665" y="205" style="font-size:.45em;text-anchor:middle;dominant-baseline:central;" z-index=100>2</text>
+
+
+
+
+							<circle cx="200" cy="50" r="20" stroke="black" stroke-width="3" fill="lightgray"/>
+							<text x="200" y="50" style="font-size:.45em;text-anchor:middle;dominant-baseline:central" >1➔2</text>
+
+							<circle cx="450" cy="75" r="20" stroke="black" stroke-width="3" fill="lightgray"/>
+							<text x="450" y="75" style="font-size:.45em;text-anchor:middle;dominant-baseline:central" >1➔2</text>
+
+							<circle cx="520" cy="200" r="20" stroke="black" stroke-width="3" fill="lightgray"/>
+							<text x="520" y="200" style="font-size:.45em;text-anchor:middle;dominant-baseline:central" >1➔2</text>
+
+							<circle cx="200" cy="175" r="20" stroke="black" stroke-width="3" fill="lightgray"/>
+							<text x="200" y="175" style="font-size:.45em;text-anchor:middle;dominant-baseline:central;" z-index=100>2➔3</text>
+
+							<circle cx="520" cy="300" r="20" stroke="black" stroke-width="3" fill="lightgray"/>
+							<text x="520" y="300" style="font-size:.45em;text-anchor:middle;dominant-baseline:central;" z-index=100>2➔3</text>
+
+							<circle cx="350" cy="200" r="20" stroke="black" stroke-width="3" fill="lightgray"/>
+							<text x="350" y="200" style="font-size:.45em;text-anchor:middle;dominant-baseline:central;" z-index=100>2➔3</text>
+
+							<circle cx="275" cy="350" r="20" stroke="black" stroke-width="3" fill="lightgray"/>
+							<text x="275" y="350" style="font-size:.45em;text-anchor:middle;dominant-baseline:central;" z-index=100>3➔1</text>
+
+							<circle cx="425" cy="300" r="20" stroke="black" stroke-width="3" fill="lightgray"/>
+							<text x="425" y="300" style="font-size:.45em;text-anchor:middle;dominant-baseline:central;" z-index=100>3➔1</text>
+
+							<circle cx="370" cy="50" r="20" stroke="black" stroke-width="3" fill="lightgray"/>
+							<text x="370" y="50" style="font-size:.45em;text-anchor:middle;dominant-baseline:central;" z-index=100>3➔1</text>
+
+
+
+							<circle cx="350" cy="105" r="20" stroke="black" stroke-width="3" fill="lightblue"/>
+							<text x="350" y="105" style="font-size:.45em;text-anchor:middle;dominant-baseline:central;" z-index=100>1</text>
+
+							<circle cx="225" cy="305" r="20" stroke="black" stroke-width="3" fill="lightblue"/>
+							<text x="225" y="305" style="font-size:.45em;text-anchor:middle;dominant-baseline:central;" z-index=100>1</text>
+
+							<circle cx="300" cy="205" r="20" stroke="black" stroke-width="3" fill="lightblue"/>
+							<text x="300" y="205" style="font-size:.45em;text-anchor:middle;dominant-baseline:central;" z-index=100>1</text>
+
+							<circle cx="470" cy="325" r="20" stroke="black" stroke-width="3" fill="lightblue"/>
+							<text x="470" y="325" style="font-size:.45em;text-anchor:middle;dominant-baseline:central;" z-index=100>2</text>
+
+							<circle cx="490" cy="165" r="20" stroke="black" stroke-width="3" fill="lightblue"/>
+							<text x="490" y="165" style="font-size:.45em;text-anchor:middle;dominant-baseline:central;" z-index=100>2</text>
+
+							<circle cx="200" cy="115" r="20" stroke="black" stroke-width="3" fill="lightblue"/>
+							<text x="200" y="115" style="font-size:.45em;text-anchor:middle;dominant-baseline:central;" z-index=100>2</text>
+
+							<circle cx="510" cy="35" r="20" stroke="black" stroke-width="3" fill="lightblue"/>
+							<text x="510" y="35" style="font-size:.45em;text-anchor:middle;dominant-baseline:central;" z-index=100>3</text>
+
+							<circle cx="350" cy="300" r="20" stroke="black" stroke-width="3" fill="lightblue"/>
+							<text x="350" y="300" style="font-size:.45em;text-anchor:middle;dominant-baseline:central;" z-index=100>3</text>
+
+							<circle cx="300" cy="45" r="20" stroke="black" stroke-width="3" fill="lightblue"/>
+							<text x="300" y="45" style="font-size:.45em;text-anchor:middle;dominant-baseline:central;" z-index=100>3</text>
+
+
+
+
+
+							<circle cx="510" cy="370" r="20" stroke="black" stroke-width="3" fill="lightblue"/>
+							<text x="510" y="370" style="font-size:.45em;text-anchor:middle;dominant-baseline:central;" z-index=100>1</text>
+
+							<circle cx="190" cy="225" r="20" stroke="black" stroke-width="3" fill="lightblue"/>
+							<text x="190" y="225" style="font-size:.45em;text-anchor:middle;dominant-baseline:central;" z-index=100>1</text>
+
+							<circle cx="245" cy="255" r="20" stroke="black" stroke-width="3" fill="lightblue"/>
+							<text x="245" y="255" style="font-size:.45em;text-anchor:middle;dominant-baseline:central;" z-index=100>2</text>
+
+							<circle cx="300" cy="155" r="20" stroke="black" stroke-width="3" fill="lightblue"/>
+							<text x="300" y="155" style="font-size:.45em;text-anchor:middle;dominant-baseline:central;" z-index=100>3</text>
+
+							<circle cx="470" cy="255" r="20" stroke="black" stroke-width="3" fill="lightblue"/>
+							<text x="470" y="255" style="font-size:.45em;text-anchor:middle;dominant-baseline:central;" z-index=100>2</text>
+
+							<circle cx="420" cy="145" r="20" stroke="black" stroke-width="3" fill="lightblue"/>
+							<text x="420" y="145" style="font-size:.45em;text-anchor:middle;dominant-baseline:central;" z-index=100>2</text>
+
+							<circle cx="410" cy="235" r="20" stroke="black" stroke-width="3" fill="lightblue"/>
+							<text x="410" y="235" style="font-size:.45em;text-anchor:middle;dominant-baseline:central;" z-index=100>1</text>
+
+							<circle cx="365" cy="365" r="20" stroke="black" stroke-width="3" fill="lightblue"/>
+							<text x="365" y="365" style="font-size:.45em;text-anchor:middle;dominant-baseline:central;" z-index=100>3</text>
+
+							<circle cx="180" cy="365" r="20" stroke="black" stroke-width="3" fill="lightblue"/>
+							<text x="180" y="365" style="font-size:.45em;text-anchor:middle;dominant-baseline:central;" z-index=100>3</text>
+
+
+
+
+
+						</svg>
+
+
+					</section>
+
+					<section>
+						<aside class="notes">
+							So here is the final difference equation representing a model of a niche constructing hypercycle. <br> As it happens, it contains the same elements as a very influential model of niche consruction from evolutionary biology.
+						</aside>
+						<h4>Final Difference Equations</h4>
+						<p>$ R_{i,t+1} = R_{i,t} + r_{i,t} p_{i,t} r_{i+1,t} - r_{i,t}\sum_{j=1}^N r_{i,t} p_{i,t} r_{i+1,t}$</p>
+						<p>$ P_{i,t+1} = P_{i,t} + (1-F)[r_{i-1,t} p_{i-1,t} - r_{i,t} p_{i,t}] - F[p_{i,t} - p_{i,0}]$
+						</p>
+						<br> <h4>With initial conditions</h4>
+						<p>$R_{i,0} = [R_{1,0}, R_{2,0},...,R_{n,0}]$</p>
+						<p>$P_{i,0} = [\sigma * \sum_{i=1}^n R_{i,0}, 0,...,0]$</p>
+
+					</section>
+
+					<section>
+						<aside class='notes'>
+							What you see here is just the equation that models the dynamics of the endogenously formed environment. Missing is the set of equations and constrains defining the process of gametic recursive, the production of allele. There is just a single product. Lambda 3 is exogenous growth. Lambda two is mathematically equivalent to the ratio between the rule and product population sizes. Gamma is anti-niche constructing (consumption of resource) and 1- lambda 1 is the flow out of the environment. implies lamdba 1 is just what stays.
+						</aside>
+						<h4> The Niche Construction Model</h4>
+						<h6>Laland, Odling-Smee, and Feldman (1999)</h6><br>
+						<p>$R_t = \lambda_1 R_{t-1} (1 - \gamma p) + \lambda_2 p + \lambda_3$</p>
+
+						<p>$0 \leq \gamma, \lambda_1, \lambda_2, \lambda_3 \leq 1$</p>
+						<p>$0 < \lambda_1 + \lambda_2 + \lambda_3 < 1$</p>
+
+					</section>
+
+				</section>
+
+				<section>
+					<section>
+						<aside class="notes">Now, there are many different types on interior equilibria and some on them look a lot like boundary equibilibria. One is starting on balance We impose a boundary delta in the evaluation of stability.
+						</aside>
+						<img src="images/OriginalHypercycle.png" class="plain" style="height:600px">
+					</section>
+
+					<section>
+						<h4> Conditions for Stability Analysis</h4>
+						<br>
+						<p>$r_{i,0} = [Total-(N-1)*50,50,...,50]$</p>
+						<p>$p_{i,0} = [\sigma * Total, 0, ..., 0]$</p>
+						<p>$\text{Boundary } \delta = .001$</p>
+					</section>
+
+					<section>
+						<aside class="notes">
+						</aside>
+						<h5> $N=5, \sigma=1, F=0$</h5>
+						<img class="plain" src="images/5-0-1.png">
+
+					</section>
+
+					<section>
+						<aside class="notes">
+						</aside>
+						<h5> $N=5, \sigma=1, F=0.5$</h5>
+						<img class="plain" src="images/5-0-.5.png">
+
+					</section>
+
+					<section>
+						<aside class="notes">
+						</aside>
+						<h5> $N=5, \sigma=1, F=0.08$</h5>
+						<img class="plain" src="images/5-.08-1.png">
+
+					</section>
+
+					<section>
+						<aside class="notes">
+						</aside>
+						<h5> $N=5, \sigma=2, F=0$</h5>
+						<img class="plain" src="images/5-0-2.png">
+
+					</section>
+
+
+					<section>
+						<aside class="notes">
+						</aside>
+						<h5> $N=5, \sigma=.5, F=0$</h5>
+						<img class="plain" src="images/5-0-.5.png">
+
+					</section>
+
+
+					<section>
+						<aside class="notes">
+						</aside>
+						<h5> $N=5, \sigma=3, F=0.15$</h5>
+						<img class="plain" src="images/5-.15-3.png">
+
+					</section>
+
+
+					<section>
+						<aside class="notes">
+						</aside>
+						<h5> $N=8, \sigma=1, F=0$</h5>
+						<img class="plain" src="images/8-0-1.png">
+
+					</section>
+
+					<section>
+						<aside class="notes">
+						</aside>
+						<h5> $N=8, \sigma=3, F=0$</h5>
+						<img class="plain" src="images/8-0-3.png">
+
+					</section>
+
+					<section>
+						<aside class="notes">
+						</aside>
+						<h5> $N=8, \sigma=3, F=0.05$</h5>
+						<img class="plain" src="images/8-.05-3.png">
+
+					</section>
+
+					<section>
+						<aside class="notes">
+							Here is the big dump of everything.
+						</aside>
+						<img class="plain" src="images/Figure 2.png">
+
+					</section>
+
+					<section>
+						<aside class="notes">
+							The flow is constant be the activity among the rules and cells is endogenous. Here is the ratio of the flow rate over the death rate. Might be a tad more impressive.
+						</aside>
+						<img class="plain" src="images/Figure_3.png">
+
+					</section>
+
+					<section>
+						<h4>Thank you!</h4>
+						<br><br>
+						<h5>Jon Atwell<br>Northwestern University<br>atwell@northwestern.edu</h5>
+					</section>
+				</section>
+
+
+
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/math/math.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad();}}
+				],
+				math: {
+					mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+					config: 'TeX-AMS_HTML-full'
+				},
+			});
+			Reveal.addEventListener( 'fragmentshown', function( event ) {
+				//event.fragment = the fragment DOM element
+			} );
+
+		</script>
+	</body>
+</html>
