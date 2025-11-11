@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jon Atwell</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+            background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: white;
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 2.5rem;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        .author-intro {
+            color: white;
+            text-align: center;
+            margin-bottom: 50px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.8;
+        }
+
+        .author-intro .author-name {
+            font-size: 1.8rem;
+            font-weight: 400;
+            margin-bottom: 15px;
+            letter-spacing: 0.5px;
+        }
+
+        .author-intro .author-details {
+            font-size: 1.1rem;
+            font-weight: 300;
+            opacity: 0.95;
+            line-height: 1.7;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 25px;
+        }
+
+        .social-link {
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            opacity: 0.85;
+        }
+
+        .social-link:hover {
+            opacity: 1;
+            transform: translateY(-3px);
+        }
+
+        .social-link svg {
+            width: 36px;
+            height: 36px;
+            fill: white;
+        }
+
+        .papers-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            padding: 0 20px;
+        }
+
+        .paper-card {
+            background: white;
+            border-radius: 12px;
+            padding: 0 0 30px 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .paper-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #0f2027 0%, #2c5364 100%);
+        }
+
+        .paper-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+        }
+
+        .paper-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #2d3748;
+            line-height: 1.4;
+            height: calc(1.4em * 4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 30px;
+            margin: 0;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 5;
+            -webkit-box-orient: vertical;
+        }
+
+        .paper-abstract {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: #4a5568;
+            text-align: justify;
+            max-height: 300px;
+            overflow-y: auto;
+            padding: 0 30px 40px 30px;
+            margin: 10;
+        }
+
+        .paper-abstract::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .paper-abstract::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+
+        .paper-abstract::-webkit-scrollbar-thumb {
+            background: #2c5364;
+            border-radius: 10px;
+        }
+
+        .paper-abstract::-webkit-scrollbar-thumb:hover {
+            background: #0f2027;
+        }
+
+        .pdf-indicator {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 30px;
+            height: 30px;
+            background: linear-gradient(135deg, #0f2027 0%, #2c5364 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.8rem;
+            font-weight: bold;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+        }
+
+        .paper-card:hover .pdf-indicator {
+            opacity: 1;
+        }
+
+        @media (max-width: 768px) {
+            .papers-grid {
+                grid-template-columns: 1fr;
+                padding: 0;
+            }
+
+            h1 {
+                font-size: 2rem;
+                margin-bottom: 30px;
+            }
+
+            .paper-card {
+                padding: 20px;
+            }
+
+            .paper-title {
+                font-size: 1.1rem;
+            }
+
+            .paper-abstract {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Jon Atwell, PhD.</h1>
+        
+        <div class="author-intro">
+            <div class="author-details">
+                Former Stanford Faculty and External Faculty at the Northwestern Institute on Complex Systems.<br>
+                Currently building tools to bring better social context to LLMs.
+            </div>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/jon-atwell-789962100/" class="social-link" target="_blank" aria-label="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                    </svg>
+                </a>
+                <a href="https://x.com/finegrained_io" class="social-link" target="_blank" aria-label="X / Twitter">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                    </svg>
+                </a>
+                <a href="https://github.com/atwel" class="social-link" target="_blank" aria-label="GitHub">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                </a>
+                <a href="https://finegrained.substack.com/" class="social-link" target="_blank" aria-label="Substack">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+        
+        <h1>Research Papers</h1>
+        <div class="papers-grid">
+
+            <div class="paper-card" onclick="window.open('pdfs/forest_trees.pdf', '_blank')">
+                <div class="pdf-indicator">PDF</div>
+                <h2 class="paper-title">Seeing the Forest for the Trees: Why Ruggedness Need Not Inhibit Effective Search</h2>
+                <p class="paper-abstract">
+                    The literature on exploration and learning in principle seeks to understand the behavior of actors in light of both their cognitive faculties and the environments they search. However, surprisingly little is known about the structure of the environment in the workhorse model, the NK fitness landscape. This model has been used to study the behavioral implications of ruggedness—the existences of many local fitness optima—, but we show that the parameter that tunes ruggedness, the eponymous K, also alters several features of the landscape that have relevance for behavior. This calls into question whether ruggedness is indeed the cause of the comparatively poor performance outcomes documented in the literature. We propose the Dirichlet Dot Product landscape to isolate the role of ruggedness. We document a complex relationship between ruggedness and the other characteristics and, in a pre-registered human-subject experiment, show that search on highly rugged Dirichlet Dot Product landscapes is as effective as search on single-peaked NK landscapes. Successful search behavior is compatible with rugged landscapes, suggesting human actors are not hopelessly myopic and in fact do well at apprehending the broader structure of the problem space. This finding suggests a need for more research on the macroscopic structure of decision-making environments, and for revisiting the putative cognitive implications of the NK model.
+                </p>
+            </div>
+            
+            <div class="paper-card" onclick="window.open('pdfs/metawisdom.pdf', '_blank')">
+                <div class="pdf-indicator">PDF</div>
+                <h2 class="paper-title">Metawisdom of the Crowd: Experimental Evidence of Crowd Accuracy Through Diverse Choices of Decision Aids</h2>
+                <p class="paper-abstract">
+                    The provision of information can improve individual judgments but nonetheless fail to make group decisions more accurate; if individuals choose to attend to the same information in the same way, the predictive diversity that enables crowd wisdom may be lost. Decision support systems, from search engines to business intelligence platforms, present individuals with decision aids—relevant information, interpretative frames, or heuristics—to enhance the quality and speed of decision-making, but have the potential to influence judgments through the selective presentation of information and interpretative frames. We re-describe decision-making as often having two decisions, the choice of decision aids and then the primary decision, and define metawisdom of the crowd as any pattern by which individuals' choice of aids leads to higher crowd accuracy than equal assignment to the same aids, a comparison that accounts for the information content of the aids. We develop a model, which shows aid usage roughly inversely proportional to the error associated with an aid will produce metawisdom in expectation. Three studies—two estimation tasks (N=900, 728) and the nowcasting of inflation (N=1,956; across three collections)—support this claim. Metawisdom comes about through the use of diverse aids, not through widespread use of the aids that induce the most accurate estimates. Thus, the microfoundations of crowd wisdom appear in the first choice, suggesting crowd wisdom can be robust in information choice problems. Given the implications for collective decision-making, more research on the nature and use of decision aids is needed.
+                </p>
+            </div>
+
+            <div class="paper-card" onclick="window.open('pdfs/occupational_similarity.pdf', '_blank')">
+                <div class="pdf-indicator">PDF</div>
+                <h2 class="paper-title">Perceptions of Occupational Similarity: Evidence of Population-level Variation</h2>
+                <p class="paper-abstract">
+                    This paper explores the concept of occupational representations and their impact on choices related to occupational change, focusing on how individuals utilize cognitive schemas based on work content attributes like skills and activities to perceive and categorize potential career transitions through similarity. Through an occupational comparison task utilizing novel embeddings of occupational data, the study investigates whether individual occupational experiences influence a preference for skills or activities during the evaluation of alternative occupations. Highlighting the role of cognitive schemas in structuring occupational preferences, I find that individuals may inherently prioritize different aspects of occupational similarity, which are also reflected in the semantic closeness of occupational descriptions. The study demonstrates how content-based representations enable individuals to find connections between diverse occupations, guiding potential transitions. The findings have significant implications for understanding occupational change, enhancing job transition recommendations, and shaping education and training policies.
+                </p>
+            </div>
+
+            <div class="paper-card" onclick="window.open('pdfs/emergence_groups.pdf', '_blank')">
+                <div class="pdf-indicator">PDF</div>
+                <h2 class="paper-title">The Emergence of Groups and Inequality through Co-Adaptation</h2>
+                <p class="paper-abstract">
+                    The emergence of groups and of inequality is often traced to pre-existing differences, exclusionary practices, or resource accumulation processes, but can the emergence of groups and their differential success simply be a feature of the behaviors of a priori equally-capable actors who have mutually adapted? Using a simple model of behavioral co-adaptation among agents whose individual actions construct a common environment, we present evidence that the formation of unequal groups is endemic to co-adaptive processes that endogenously alter the environment; agents tend to separate into two groups, one whose members stop adapting earliest (the in-group), and another comprising agents who continue to adapt (the out-group). Over a wide range of model parameters, members of the in-group are rewarded more on average than members of the out-group. The primary reason is that the in-group is able to have a more profound influence on the environment and mold it to the benefit of its members. This molding capacity proves more beneficial than the persistence of adaptivity, yet, crucially, which agents are able to form a coalition to successfully exert this control is strongly contingent on random aspects of the set of agent behaviors. In this paper, we present the model, relevant definitions, and results. We then discuss its implications for the study of complex adaptive systems generally.
+                </p>
+            </div>
+
+            <div class="paper-card" onclick="window.open('pdfs/spectating_conventions.pdf', '_blank')">
+                <div class="pdf-indicator">PDF</div>
+                <h2 class="paper-title">Information From Spectating Can Facilitate the Emergence of Conventions</h2>
+                <p class="paper-abstract">
+                    Conventions are a core component of social organization, but network-based models do not account for their emergence; the clustering present in social networks creates sustained competition between alternative behaviors. I argue that including actors' observation of the activities of non-alters can lessen that competition and facilitate group-wide coordination. Such spectating behaviors–observation without direct engagement—have long been theorized as relevant, but network models do not account for this potentially rich source of information. In large-group experiments (62 groups, 1488 participants), the addition of spectating-based information facilitates the emergence of group-wide conventions. This pathway yields more information than a variety of alternatives, including additional bridging ties. Its availability rapidly reduces the diversity of alternatives, which, frequently, then drives a continuous increase in coordination success until there is a single convention. These results suggest that spectating behaviors are a thrifty means of acquiring social information and can be instrumental in facilitating the emergence of conventions, from role structures to strong organizational cultures.
+                </p>
+            </div>
+
+            <div class="paper-card" onclick="window.open('pdfs/riding_tides.pdf', '_blank')">
+                <div class="pdf-indicator">PDF</div>
+                <h2 class="paper-title">Riding the Tides: A Formal Model of the Challenge Functional Interdependencies Create for Search and Learning</h2>
+                <p class="paper-abstract">
+                    In the formal modeling literature, interdependencies between organizational components manifest through their impact on a unified measure of performance; the contribution to performance of a single component depends on the state of the components with which it has interdependencies. Interdependencies, when formulated as such, are superficial because changing the state of a component does not affect the state of other components, only the fitness contributions. In this paper, I propose a model of functional dependencies based on the well-known spin-glass model, in which interdependencies are modelled holistically by taking a matrix of interdependencies and yielding probabilities for entire configurations. While these functional interdependencies can be modeled alongside the traditional fitness interdependencies, an analysis of functional interdependencies alone provides fresh insights into the imperfect process of organizational configuration; common assumptions about forward causation imply that returning to previous locations is extremely costly and therefore search becomes a highly path-dependent walk on even single-peaked energy surfaces.
+                </p>
+            </div>
+
+            <div class="paper-card" onclick="window.open('pdfs/predictive_diversity.pdf', '_blank')">
+                <div class="pdf-indicator">PDF</div>
+                <h2 class="paper-title">On Predictive Diversity as a Function of Attentional Diversity</h2>
+                <p class="paper-abstract">
+                    March and Simon positioned attention as a core concern of the Carnegie perspective, and the "attention-based view" (ABV) of the firm that followed has documented some of the complexities of attentional processes within organizational settings. Drawing on the wisdom of the crowd framework, I explore how the organizational structuring of decision-makers' attention bounds the success of organizational decision-making. The division of labor within organizations and the psychological drive to selectively apply attention according to one's immediate tasks and goals implies that individual decision-makers will have diverse attention to, and representations of, an organization's complete task domain. The wisdom of the crowd literature shows that decision-makers with diverse representations can nonetheless collectively make accurate estimates, but the question remains whether the diverse attention within organizations leads to beneficially diverse representations. If it does, organizational decision-making has the potential to help overcome the bounded rationality of the individuals within the organization. I model the relationship between the structure of attention within an organization and an organization's probability of making correct decisions. The model also considers the size of the individuals' attention budget, the number of decision-makers and the features of the decision-making environment. The results show that directing attention toward diverse facets of the organizations' environment leads to the predictive diversity on which crowd wisdom is built. However, the ability of an organization to make use of this predictive diversity depends on the decision-making process it deploys and the depth of the interdependencies between aspects of the problem environment. Those issues not withstanding, limited attention, when diversely structured, can lead to strong organizational decision-making performance.
+                </p>
+            </div>
+
+            <div class="paper-card"">
+                <div class="pdf-indicator">PDF</div>
+                <h2 class="paper-title">Organizing Attention in Complex Domains</h2>
+                <p class="paper-abstract">
+                    The cognitive models or frames of organizational decision-makers are important to identify superior strategies. Because the cognitive models of managers are always simplifications of reality, superior cognitive models are important for superior judgements. Yet, most organizations leverage decision processes that involve multiple roles. In multi-actor decision processes, more important than the accuracy of individual cognitive models is the complementarity of those models, posing a coordination problem on decision-makers. We theorize that organizations can solve this coordination problem by considering the structure of attention as a feature of organizational design, ensuring that cognitive models are complementary. We engage human subjects in an experiential learning process and capture their cognitive maps to simulate decision-making processes in organizations. We find an inverted-U relationship between the width of individuals' attention and their accuracy. However, attentional diversity within the group enhances collective accuracy.
+                </p>
+            </div>
+
+
+
+
+
+
+        </div>
+    </div>
+</body>
+</html>
