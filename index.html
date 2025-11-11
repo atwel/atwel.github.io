@@ -21,7 +21,9 @@
 
         .container {
             max-width: 1400px;
-            margin: 0 auto;
+            margin-top: 75px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         h1 {
@@ -80,6 +82,95 @@
             width: 36px;
             height: 36px;
             fill: white;
+        }
+
+        .book-meeting {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .book-meeting-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            padding: 12px 24px;
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            font-weight: 400;
+            cursor: pointer;
+            background: transparent;
+        }
+
+        .book-meeting-btn:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.7);
+            transform: translateY(-2px);
+        }
+
+        .book-meeting-btn svg {
+            width: 20px;
+            height: 20px;
+            fill: white;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 800px;
+            height: 80vh;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 35px;
+            height: 35px;
+            font-size: 24px;
+            cursor: pointer;
+            z-index: 1001;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s ease;
+        }
+
+        .modal-close:hover {
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        .modal-iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
         }
 
         .papers-grid {
@@ -213,6 +304,7 @@
 </head>
 <body>
     <div class="container">
+        <br><br>
         <h1>Jon Atwell, PhD.</h1>
         
         <div class="author-intro">
@@ -220,6 +312,16 @@
                 Former Stanford Faculty and External Faculty at the Northwestern Institute on Complex Systems.<br>
                 Currently building tools to bring better social context to LLMs.
             </div>
+
+            <div class="book-meeting">
+                <button class="book-meeting-btn" onclick="openModal()">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zM9 14H7v-2h2v2zm4 0h-2v-2h2v2zm4 0h-2v-2h2v2zm-8 4H7v-2h2v2zm4 0h-2v-2h2v2zm4 0h-2v-2h2v2z"/>
+                    </svg>
+                    Book a Meeting
+                </button>
+            </div>
+
             <div class="social-links">
                 <a href="https://www.linkedin.com/in/jon-atwell-789962100/" class="social-link" target="_blank" aria-label="LinkedIn">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -243,7 +345,14 @@
                 </a>
             </div>
         </div>
-        
+
+        <div id="meetingModal" class="modal" onclick="closeModalOnBackdrop(event)">
+            <div class="modal-content">
+                <button class="modal-close" onclick="closeModal()">&times;</button>
+                <iframe class="modal-iframe" src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ2VKKhkrua3TszvSVvOLi2Zw3G-rApELHDoQzBO_UrqYkvQVUswRJos4q9MrRyrheS1oYZBISt2?gv=true"></iframe>
+            </div>
+        </div>
+<br><br><br>
         <h1>Research Papers</h1>
         <div class="papers-grid">
 
@@ -311,12 +420,48 @@
                 </p>
             </div>
 
+            <div class="paper-card" onclick="window.open('https://journals.sagepub.com/doi/abs/10.1177/0049124113506405', '_blank')">
+                <div class="pdf-indicator">URL</div>
+                <h2 class="paper-title">Agent-Based Models in Empirical Social Research</h2>
+                <p class="paper-abstract">
+                    Agent-based modeling has become increasingly popular in recent years, but there is still no codified set of recommendations or practices for how to use these models within a program of empirical research. This article provides ideas and practical guidelines drawn from sociology, biology, computer science, epidemiology, and statistics. We first discuss the motivations for using agent-based models in both basic science and policy-oriented social research. Next, we provide an overview of methods and strategies for incorporating data on behavior and populations into agent-based models, and review techniques for validating and testing the sensitivity of agent-based models. We close with suggested directions for future research.
+                </p>
+            </div>
 
-
+            <div class="paper-card" onclick="window.open('https://journals.sagepub.com/doi/full/10.1177/0094306120902417c', '_blank')">
+                <div class="pdf-indicator">URL</div>
+                <h2 class="paper-title">If Only It Were That Complex</h2>
+                <p class="paper-abstract">
+                    A review of "How Behavior Spreads" by Damon Centola
+                </p>
+            </div>
 
 
 
         </div>
     </div>
+
+    <script>
+        function openModal() {
+            document.getElementById('meetingModal').classList.add('active');
+        }
+
+        function closeModal() {
+            document.getElementById('meetingModal').classList.remove('active');
+        }
+
+        function closeModalOnBackdrop(event) {
+            if (event.target.id === 'meetingModal') {
+                closeModal();
+            }
+        }
+
+        // Close modal on Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
+    </script>
 </body>
 </html>
